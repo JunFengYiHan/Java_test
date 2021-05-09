@@ -69,7 +69,7 @@ public class MyArrayList {
     }
     // 给 pos 位置的元素设为 value
     public void setPos(int pos, int value) {
-        if(pos<0||pos>this.usedSize){
+        if(pos<0||pos>=this.usedSize){
             System.out.println("pos位置非法");
             return;
         }

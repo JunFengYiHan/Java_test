@@ -20,6 +20,9 @@ class ListNode {
 public class MyLinkedList {
     public ListNode head;//标识整个链表的头
 
+    public static void main(String[] args) {
+
+    }
     //得到单链表的长度
     public int size(){
         ListNode tmp = this.head;
@@ -98,6 +101,10 @@ public class MyLinkedList {
     public void remove(int key) {
         ListNode tmp = this.head;
         ListNode node = tmp;
+        if(this.head.val==key){
+            this.head = this.head.next;
+            return;
+        }
         while(tmp!=null && tmp.val!=key){
             node = tmp;
             tmp = tmp.next;
@@ -110,12 +117,42 @@ public class MyLinkedList {
     }
     //删除所有值为key的节点
     public void removeAllKey(int key){
-
+        ListNode tmp = this.head;
+        ListNode node = tmp;
+        while(this.head!=null && this.head.val==key){
+            this.head = this.head.next;
+        }
+//        if(this.head.val==key){
+//
+//        }
+        while(true){
+            while(tmp!=null && tmp.val!=key){
+                node = tmp;
+                tmp = tmp.next;
+            }
+            if(tmp==null){
+                System.out.println(key+"删除完成");
+                return;
+            }
+            node.next = tmp.next;
+            tmp = tmp.next;
+        }
     }
+
     public void clear() {
-
+        ListNode tmp = this.head;
+        while(tmp!=null){
+            this.head=null;
+            tmp = tmp.next;
+            this.head=tmp;
+        }
+        System.out.println("链表已清空");
     }
 
+
+//    public ListNode removeList() {
+//
+//    }
     /**
      * 穷举法，最low的方式 先建造一个链表出来，让你来感受一下
      */
