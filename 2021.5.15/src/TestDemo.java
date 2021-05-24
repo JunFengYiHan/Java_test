@@ -23,19 +23,19 @@ public class TestDemo {
         myLinkedList.display();
         System.out.println("=================");
 
-//        myLinkedList.removeAllData(99);
+        myLinkedList.removeAllData(99);
 //        myLinkedList.clear();
 //        System.out.println(myLinkedList.search(0));
         myLinkedList.modify(0,5);
-//        System.out.println(myLinkedList.contains(99));
-//        myLinkedList.removeFirstData(99);
-//        System.out.println(myLinkedList.contains(99));
-//        myLinkedList.removeFirstData(99);
-//        myLinkedList.removeAllData(99);
-//        System.out.println(myLinkedList.contains(99));
-//        myLinkedList.removeFirstData(99);
-//        System.out.println(myLinkedList.contains(99));
-//        myLinkedList.removeAllData(99);
+        System.out.println(myLinkedList.contains(99));
+        myLinkedList.removeFirstData(99);
+        System.out.println(myLinkedList.contains(99));
+        myLinkedList.removeFirstData(99);
+        myLinkedList.removeAllData(99);
+        System.out.println(myLinkedList.contains(99));
+        myLinkedList.removeFirstData(99);
+        System.out.println(myLinkedList.contains(99));
+        myLinkedList.removeAllData(99);
         myLinkedList.display();
     }
 }

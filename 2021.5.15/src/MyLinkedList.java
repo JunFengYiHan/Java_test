@@ -14,7 +14,9 @@ class ListNode{
         this.val = val;
     }
 }
+
 public class MyLinkedList {
+
     ListNode head = new ListNode(-1);
     ListNode last;
 
