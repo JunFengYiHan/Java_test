@@ -10,10 +10,48 @@ package demo;
 class Cat extends Animal {
     //什么都不写，只是继承了Animal
 }
-public class TestDemo {
 
+public class TestDemo {
+    public static void eat(People people){
+        people.eat();
+    }
     public static void main(String[] args) {
+        Teacher teacher = new Teacher();
+        Student student = new Student();
+        eat(teacher);
+        eat(student);
+    }
+
+
+
+    public static void work(People people){
+        people.work();
+    }
+    public static void main3(String[] args) {
+        //People people1 = new People();
+        //People people2 = new Teacher();
+       // People people = new People();
+        Teacher teacher = new Teacher();
+        Student student = new Student();
+      //  work(people);
+        work(teacher);
+        work(student);
+       // people1.work();
+        //people2.work();
+       // teacher.work();
+//        Teacher teacher = new Teacher();
+//         People people =  new Teacher();
+//         Teacher teacher = (Teacher) people;
+//        cook(teacher);
+    }
+
+    public static People cook(People people){
+        Teacher teacher = new Teacher();
+        return teacher;
+    }
+    public static void main2(String[] args) {
         //Animal animal = new Animal();
+        //Cat cat =  (Cat) animal;
         Cat cat = new Cat();
         cat.name = "花花";
         cat.sex = "雌性";

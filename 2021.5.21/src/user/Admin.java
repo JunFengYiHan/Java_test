@@ -30,6 +30,7 @@ public class Admin extends User {
         System.out.println("2.增加书籍");
         System.out.println("3.删除书籍");
         System.out.println("4.显示书籍");
+        System.out.println("5.切换用户");
         System.out.println("0.退出系统");
         System.out.println("===================================");
         Scanner scanner = new Scanner(System.in);

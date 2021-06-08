@@ -27,10 +27,17 @@ public class Main {
     }
     public static void main(String[] args) {
         BookList bookList = new BookList();
-        User user = login();
         while(true){
-            int choice = user.menu();
-            user.doOperation(choice,bookList);
+            User user = login();
+            while(true) {
+                int choice = user.menu();
+                if(choice == 5){
+                    System.out.println("请重新登录！");
+                    break;
+                }
+                user.doOperation(choice,bookList);
+            }
         }
+
     }
 }

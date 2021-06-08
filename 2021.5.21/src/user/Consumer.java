@@ -30,6 +30,7 @@ public class Consumer extends User {
         System.out.println("2.借阅书籍");
         System.out.println("3.归还书籍");
         System.out.println("4.展示书籍");
+        System.out.println("5.切换用户");
         System.out.println("0.退出系统");
         System.out.println("===================================");
         Scanner scanner = new Scanner(System.in);

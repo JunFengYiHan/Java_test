@@ -7,7 +7,7 @@ package demo;
  * Date: 2021-05-22
  * Time: 12:52
  */
-public class Animal{
+public abstract class Animal{
     protected String name;
     protected String sex;
     protected void eat(){
