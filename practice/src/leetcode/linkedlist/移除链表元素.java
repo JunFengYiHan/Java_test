@@ -1,6 +1,4 @@
-//package LeetCode;
-//
-//import java.util.List;
+//package leetcode;
 //
 ///**
 // * Created with IntelliJ IDEA.

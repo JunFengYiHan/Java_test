@@ -1,9 +1,6 @@
-//package LeetCode;
-//
-//import org.omg.PortableInterceptor.INACTIVE;
+//package leetcode;
 //
 //import java.util.ArrayList;
-//import java.util.Collections;
 //import java.util.List;
 //
 ///**

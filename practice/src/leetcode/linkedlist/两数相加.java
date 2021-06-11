@@ -1,4 +1,4 @@
-//package LeetCode;
+//package leetcode.linkedlist;
 //
 ///**
 // * Created with IntelliJ IDEA.
