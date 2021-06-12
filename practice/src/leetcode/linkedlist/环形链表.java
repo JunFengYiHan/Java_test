@@ -1,4 +1,4 @@
-//package leetcode;
+//package leetcode.linkedlist;
 //
 ///**
 // * Created with IntelliJ IDEA.
@@ -19,6 +19,9 @@
 //    public boolean hasCycle(ListNode head) {
 //        ListNode fast = head;
 //        ListNode slow = head;
+//        //快的一次走两步，慢的一次走一步
+//        //如果带环两个节点一定会相遇
+//        //有尾节点一定不带环
 //        while(fast!=null&&fast.next!=null){
 //            fast = fast.next.next;
 //            slow = slow.next;

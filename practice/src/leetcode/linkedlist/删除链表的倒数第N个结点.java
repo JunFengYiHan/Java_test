@@ -20,18 +20,20 @@
 //        ListNode cur = head;
 //        ListNode targetPrev = null;
 //        //代码的健壮性
+//        //小于0直接返回原链表
 //        if(n<0) return head;
 //
 //        while(n>0){
-//            if(cur==null) return head;
+//            if(cur==null) return head;//n大于链表长度返回原链表
 //            n--;
 //            cur = cur.next;
 //        }
 //        while(cur!=null){
-//            cur = cur.next;
-//            targetPrev = target;
-//            target = target.next;
+//            cur = cur.next;//快指针指向下一个节点
+//            targetPrev = target;//记录前一个节点
+//            target = target.next;//慢指针指向下一个节点
 //        }
+//        //上一个为空说明要删除的是头部
 //        if(targetPrev==null){
 //            head = head.next;
 //        }else{

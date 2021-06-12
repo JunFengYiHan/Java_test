@@ -15,8 +15,8 @@
 //        this.val = val;
 //    }
 //}
-//public class 删除链表中重复的结点 {
-//    //还需要看一下，链接：https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&&tqId=11209&rp=1&ru=/activity/oj&qru=/ta/coding-interviews/question-ranking
+//public class 需练删除链表中重复的结点 {
+        // 链接：https://www.nowcoder.com/practice/fc533c45b73a41b0b44ccba763f866ef?tpId=13&&tqId=11209
 //    public ListNode deleteDuplication(ListNode pHead) {
 //        if(pHead==null||pHead.next==null) return pHead;
 //        ListNode newHead = new ListNode(-1);

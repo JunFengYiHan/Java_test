@@ -15,7 +15,7 @@
 //        this.val = val;
 //    }
 //}
-//public class 链表的回文结构 {
+//public class 需练链表的回文结构 {
 //    //还需要再熟悉一下 链接：https://www.nowcoder.com/practice/d281619e4b3e4a60a2cc66ea32855bfa?tpId=49&&tqId=29370&rp=1&ru=/activity/oj&qru=/ta/2016test/question-ranking
 //    public boolean chkPalindrome(ListNode A) {
 //        if(A==null) return false;
