@@ -1,7 +1,6 @@
 package 牛客.tree.KY11二叉树遍历;
 
 
-import java.util.Comparator;
 import java.util.Scanner;
 
 /**

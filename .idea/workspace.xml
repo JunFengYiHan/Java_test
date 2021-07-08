@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="258e5f33-00bc-4da0-98ac-a759efa82517" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assignment/2021.4.5/2021.4.5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/assignment/2021.4.5/2021.4.5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/src/leetcode/tree/二叉树的最近公共祖先/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice/src/leetcode/tree/二叉树的最近公共祖先/TestDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice/src/牛客/tree/KY11二叉树遍历/TestDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/practice/src/牛客/tree/KY11二叉树遍历/TestDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +40,7 @@
       <workItem from="1617630010646" duration="28000" />
       <workItem from="1623523233163" duration="40000" />
       <workItem from="1623523300532" duration="3000" />
+      <workItem from="1625711418339" duration="24000" />
     </task>
     <servers />
   </component>
