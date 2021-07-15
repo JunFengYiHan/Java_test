@@ -47,67 +47,72 @@ public class TestDemo {
         }
         //buildHeap(heap,heap.size());//在原数组上构造一个堆
         List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < k && !heap.isEmpty(); i++) {
-            //每次都调整的话时间复杂度太高了，但是堆只能保证根节点的有效性，所以直接建堆肯定要调整
-            buildHeap(heap,heap.size());//在原数组上构造一个堆
+        buildHeap(heap,heap.size());//在原数组上构造一个小堆
+        //取k和给定数组的较小值
+        for (int i = 0; i < Math.min(k,heap.size()); i++) {
+            //取出堆顶元素
             Pair cur = heap.get(0);
-            heap.set(0,heap.remove(heap.size()-1));
+            //将当前的最后一个元素放到堆顶，已经取过的元素不算在堆内
+            heap.set(0,heap.get(heap.size()-i-1));
+            //将取得的最小元素放入目标数组中
             List<Integer> tmp = new ArrayList<>();
             tmp.add(cur.n1);
             tmp.add(cur.n2);
             result.add(tmp);
+            //重新调整堆，已经取过的元素不算在堆内
+            shiftDown(heap,heap.size()-1-i,0);
         }
         return result;
     }
-    private void buildHeap(List<Pair> heap,int size) {
-        for (int i = 0; i < size; i++) {
-            shiftUP(heap,i);
-        }
-    }
-    //向上调整，不断向根节点靠近
-    private void shiftUP(List<Pair> heap,  int index) {
-        int child = index;
-        int parent = (child-1)/2;
-        while(child>0) {
-            if(heap.get(child).sum<heap.get(parent).sum) {
-                Pair tmp = heap.get(child);
-                heap.set(child,heap.get(parent));
-                heap.set(parent,tmp);
-            }else{
-                break;
-            }
-            child = parent;
-            parent = (child-1)/2;
-        }
-    }
 //    private void buildHeap(List<Pair> heap,int size) {
-//        for (int i = (size -1 -1) / 2; i >= 0; i--) {
-//            shiftDown(heap,size,i);
+//        for (int i = 0; i < size; i++) {
+//            shiftUP(heap,i);
 //        }
 //    }
-//    //向下调整，不断往最后一个节点靠近
-//    private void shiftDown(List<Pair> heap, int size, int index) {
-//        int parent = index;//以当下标为根节点下标
-//        int child = 2 * parent + 1;//找到它的左子树下标
-//        while (child < size) {//左子树下标有效进入循环
-//            //右子树存在，求得二者较小者的下标，不存在则左子树默认为较小者
-//            if (child + 1 < size && heap.get(child).sum > heap.get(child + 1).sum) {
-//                child = child + 1;
-//            }
-//            //如果根节点小于左右子树则不需要调整，满足小堆规则
-//            if (heap.get(child).sum < heap.get(parent).sum) {
-//                //交换根节点和左右子树较小者，形成堆
-//                Pair temp = heap.get(child);
-//                heap.set(child, heap.get(parent));
-//                heap.set(parent, temp);
-//            } else {
+//    //向上调整，不断向根节点靠近
+//    private void shiftUP(List<Pair> heap,  int index) {
+//        int child = index;
+//        int parent = (child-1)/2;
+//        while(child>0) {
+//            if(heap.get(child).sum<heap.get(parent).sum) {
+//                Pair tmp = heap.get(child);
+//                heap.set(child,heap.get(parent));
+//                heap.set(parent,tmp);
+//            }else{
 //                break;
 //            }
-//            //将当前较小者当作父节点，继续调整
-//            parent = child;//以当前子树下标作为新的根节点下标
-//            child = 2 * parent + 1;//更新子树下标
+//            child = parent;
+//            parent = (child-1)/2;
 //        }
 //    }
+    private void buildHeap(List<Pair> heap,int size) {
+        for (int i = (size -1 -1) / 2; i >= 0; i--) {
+            shiftDown(heap,size,i);
+        }
+    }
+    //向下调整，不断往最后一个节点靠近
+    private void shiftDown(List<Pair> heap, int size, int index) {
+        int parent = index;//以当下标为根节点下标
+        int child = 2 * parent + 1;//找到它的左子树下标
+        while (child < size) {//左子树下标有效进入循环
+            //右子树存在，求得二者较小者的下标，不存在则左子树默认为较小者
+            if (child + 1 < size && heap.get(child).sum > heap.get(child + 1).sum) {
+                child = child + 1;
+            }
+            //如果根节点小于左右子树则不需要调整，满足小堆规则
+            if (heap.get(child).sum < heap.get(parent).sum) {
+                //交换根节点和左右子树较小者，形成堆
+                Pair temp = heap.get(child);
+                heap.set(child, heap.get(parent));
+                heap.set(parent, temp);
+            } else {
+                break;
+            }
+            //将当前较小者当作父节点，继续调整
+            parent = child;//以当前子树下标作为新的根节点下标
+            child = 2 * parent + 1;//更新子树下标
+        }
+    }
 //    private void shiftDown(List<Pair> heap, int size, int index) {
 //        int child = 2*index+1;
 //        while(child<size) {
