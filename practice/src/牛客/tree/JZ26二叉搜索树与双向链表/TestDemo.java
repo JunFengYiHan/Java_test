@@ -14,15 +14,15 @@ class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
-
     }
 
 }
 public class TestDemo {
     public TreeNode Convert(TreeNode pRootOfTree) {
-        if(pRootOfTree==null || pRootOfTree.left==null&&pRootOfTree.right==null) return pRootOfTree;
+        if(pRootOfTree==null || pRootOfTree.left==null && pRootOfTree.right==null) return pRootOfTree;
         TreeNode left = Convert(pRootOfTree.left);//得到左子树
         TreeNode leftTail = left;
+        //找到右子树
         while(leftTail!=null&&leftTail.right!=null) {
             leftTail = leftTail.right;
         }

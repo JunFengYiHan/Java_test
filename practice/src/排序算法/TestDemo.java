@@ -15,9 +15,46 @@ public class TestDemo {
         //insertSort(arr);
         //shellSort(arr);
         //selectSort(arr);
-        heapSort(arr);
+        //heapSort(arr);
+        quickSort(arr);
         System.out.println(Arrays.toString(arr));
     }
+    //快速排序
+    private static void quickSort(int[] arr) {
+        quickSortHelper(arr,0,arr.length-1);
+    }
+    //辅助方法，划分排序区间
+    private static void quickSortHelper(int[] arr, int left, int right) {
+        if(left>=right) {
+            //没有或者一个元素，不需要排序直接返回
+            return;
+        }
+        int index = partition(arr,left,right);
+        quickSortHelper(arr,left,index-1);
+        quickSortHelper(arr,index+1,right);
+    }
+
+    private static int partition(int[] arr, int left, int right) {
+        int bgn = left;//从最左侧开始
+        int end = right;//
+        int norm = arr[right];//以最右侧元素为基准
+        while(bgn<end) {
+            //从左往右找到一个比基准大的
+            while(bgn < end && arr[bgn] <= norm) {
+                bgn++;
+            }
+            //从右往左找到一个比基准小的
+            while(bgn < end && arr[end] >= norm) {
+                end--;
+            }
+            //交换两个元素
+            swap(arr,bgn,end);
+        }
+        //交换当前元素和基准
+        swap(arr,end,right);
+        return end;
+    }
+
     //堆排序
     private static void heapSort(int[] arr) {
         buildHeap(arr);//先建一个堆
