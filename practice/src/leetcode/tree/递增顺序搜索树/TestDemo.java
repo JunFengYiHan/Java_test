@@ -20,20 +20,21 @@ class TreeNode {
     }
 }
 public class TestDemo {
-    TreeNode ret = null;
+    //给一个傀儡节点
+    TreeNode dummy = new TreeNode(-1);
+    TreeNode cur = dummy;
     public TreeNode increasingBST(TreeNode root) {
         inorder(root);
-        return ret;
+        return dummy.right;
     }
-    private TreeNode inorder(TreeNode root) {
-        //空树或者只有根节点直接返回
-        if(root==null||root.left==null&&root.right==null) return root;
-        TreeNode left = inorder(root.left);//得到左子树
-        if(ret==null) {
-            ret = left;
-        }
-        left.right = root;
-        increasingBST(root.right);
-        return
+    private void inorder(TreeNode root) {
+        if(root==null) return;
+        inorder(root.left);
+
+        cur.right = root;
+        cur = cur.right;
+        root.left = null;
+
+        inorder(root.right);
     }
 }

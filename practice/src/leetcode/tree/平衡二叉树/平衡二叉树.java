@@ -32,7 +32,10 @@ public class 平衡二叉树 {
             return true;
         }
         //求出左右子树深度进行判断
-        if(maxDepth(root.left) - maxDepth(root.right)>1||maxDepth(root.left) - maxDepth(root.right)<-1) {
+//        if(maxDepth(root.left) - maxDepth(root.right)>1||maxDepth(root.left) - maxDepth(root.right)<-1) {
+//            return false;
+//        }
+        if(Math.abs(maxDepth(root.left) - maxDepth(root.right)) > 1 ) {
             return false;
         }
         return isBalanced(root.left) && isBalanced(root.right);
@@ -43,11 +46,11 @@ public class 平衡二叉树 {
         if (root == null) {
             return 0;
         }
-        //叶子节点深度为1
+        //叶子节点深度为1 ，写不写都可以，左右递归进去返回0
         if (root.left == null && root.right == null) {
             return 1;
         }
-        //当前节点不为空，记1，然后求左右子树深度的较大值
+        //当前节点不为空，记1，然后求左右子树深度的较大值，
         return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
     }
 }
