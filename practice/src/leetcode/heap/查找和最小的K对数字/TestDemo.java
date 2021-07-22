@@ -36,13 +36,6 @@ public class TestDemo {
         for (int i = 0; i < nums1.length; i++) {
             for (int j = 0; j < nums2.length; j++) {
                 heap.add(new Pair(nums1[i],nums2[j]));
-//                if(heap.size()<k) {
-//                    heap.add(new Pair(nums1[i],nums2[j]));
-//                }else {
-//                    if(heap.get(0).sum>nums1[i]+nums2[j]) {
-//
-//                    }
-//                }
             }
         }
         //buildHeap(heap,heap.size());//在原数组上构造一个堆
@@ -69,22 +62,22 @@ public class TestDemo {
 //            shiftUP(heap,i);
 //        }
 //    }
-//    //向上调整，不断向根节点靠近
-//    private void shiftUP(List<Pair> heap,  int index) {
-//        int child = index;
-//        int parent = (child-1)/2;
-//        while(child>0) {
-//            if(heap.get(child).sum<heap.get(parent).sum) {
-//                Pair tmp = heap.get(child);
-//                heap.set(child,heap.get(parent));
-//                heap.set(parent,tmp);
-//            }else{
-//                break;
-//            }
-//            child = parent;
-//            parent = (child-1)/2;
-//        }
-//    }
+    //向上调整，不断向根节点靠近
+    private void shiftUP(List<Pair> heap,  int index) {
+        int child = index;
+        int parent = (child-1)/2;
+        while(child>0) {
+            if(heap.get(child).sum<heap.get(parent).sum) {
+                Pair tmp = heap.get(child);
+                heap.set(child,heap.get(parent));
+                heap.set(parent,tmp);
+            }else{
+                break;
+            }
+            child = parent;
+            parent = (child-1)/2;
+        }
+    }
     private void buildHeap(List<Pair> heap,int size) {
         for (int i = (size -1 -1) / 2; i >= 0; i--) {
             shiftDown(heap,size,i);

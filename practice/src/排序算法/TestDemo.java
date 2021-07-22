@@ -15,13 +15,18 @@ public class TestDemo {
         //insertSort(arr);
         //shellSort(arr);
         //selectSort(arr);
+        //bubbleSort(arr);
         //heapSort(arr);
-        quickSort(arr);
+        //quickSort(arr);
+        //merger(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+
+
     //快速排序
     private static void quickSort(int[] arr) {
-        quickSortHelper(arr,0,arr.length-1);
+        quickSortHelper(arr,0,arr.length-1);//闭区间
     }
     //辅助方法，划分排序区间
     private static void quickSortHelper(int[] arr, int left, int right) {
@@ -33,7 +38,7 @@ public class TestDemo {
         quickSortHelper(arr,left,index-1);
         quickSortHelper(arr,index+1,right);
     }
-
+    //真正的排序
     private static int partition(int[] arr, int left, int right) {
         int bgn = left;//从最左侧开始
         int end = right;//
@@ -95,6 +100,33 @@ public class TestDemo {
             child = 2 * parent + 1;
         }
     }
+    //向上调整
+    private static void shiftUp(int[] arr,int index) {
+        int child = index;
+        int parent = (child-1)/2;
+        while(child>0) {
+            if(arr[child]>arr[parent]) {
+                int tmp = arr[child];
+                arr[child] = arr[parent];
+                arr[parent] = tmp;
+            }
+            child = index;
+            parent = (child-1)/2;
+        }
+    }
+    //冒泡排序
+    private static void bubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length -1 -i; j++) {
+                if(arr[j]>arr[j+1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
+                }
+            }
+        }
+    }
+
 
     //选择排序
     private static void selectSort(int[] arr) {
