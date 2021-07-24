@@ -1,4 +1,4 @@
-package 其他练习.杂七杂八;
+package 其他练习.杂七杂八.杨辉三角;
 
 import java.util.ArrayList;
 import java.util.List;

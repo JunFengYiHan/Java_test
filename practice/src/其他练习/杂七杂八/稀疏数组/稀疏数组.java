@@ -1,4 +1,4 @@
-package 其他练习.杂七杂八;
+package 其他练习.杂七杂八.稀疏数组;
 
 /**
  * Created with IntelliJ IDEA.

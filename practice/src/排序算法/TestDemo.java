@@ -11,20 +11,90 @@ import java.util.Arrays;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        int[] arr = {4,58,2,7,93,39,6};
+        //int[] arr = {4,58,2,7,93,39,6};
+        int[] arr = {9,10,1,7,3};
         //insertSort(arr);
         //shellSort(arr);
         //selectSort(arr);
         //bubbleSort(arr);
-        //heapSort(arr);
+        heapSort(arr);
         //quickSort(arr);
-        //merger(arr);
+        //mergerSort(arr);
+        //mergerSortByLoop(arr);
+
         System.out.println(Arrays.toString(arr));
+    }
+    //归并排序，非递归实现
+    private static void mergerSortByLoop(int[] arr) {
+        //以gap个元素分组
+        //第一次划分为[0,1) [1,2) [2,3) [3,4)..
+        //第二次划分为[0,2) [2,4) [4,6) [6,8)..
+        //...
+        //划分为2组，合并完成，排序完成
+        for (int gap = 1; gap < arr.length; gap *= 2) {
+            for (int i = 0; i < arr.length; i += 2*gap) {
+                int low = i;
+                int mid = i + gap;
+                int high = i + 2*gap;
+                //防止下标越界
+                if(mid>arr.length) {
+                    mid = arr.length;
+                }
+                if (high>arr.length) {
+                    high = arr.length;
+                }
+                merger(arr,low,mid,high);
+            }
+        }
+    }
+    //归并排序，递归实现,时间复杂度O(N*logN)，空间复杂度O(N)
+    private static void mergerSort(int[] arr) {
+        mergerSortHelper(arr,0,arr.length);
+    }
+
+    private static void mergerSortHelper(int[] arr, int low, int high) {
+        //1个或0个元素不需要排序，直接返回
+        if(high-low<=1) {
+            return;
+        }
+        //不断划分区间
+        int mid = (high-low)/2 + low;
+        //划分足够小的时候就有序了，然后合并往上，逐渐有序
+        mergerSortHelper(arr,low,mid);
+        mergerSortHelper(arr,mid,high);
+        //合并两个区间
+        merger(arr,low,mid,high);
+    }
+    //合并方法,归并核心代码
+    private static void merger(int[] arr,int low,int mid,int high) {
+        int[] tmp = new int[high-low];
+        int useSize = 0;
+        int cur1 = low;
+        int cur2 = mid;
+        //将两个有序数组合并在一起
+        while(cur1<mid&&cur2<high) {
+            //取等可以保证稳定性
+            if (arr[cur1]<=arr[cur2]) {
+                tmp[useSize++] = arr[cur1++];
+            } else{
+                tmp[useSize++] = arr[cur2++];
+            }
+        }
+        //上面循环结束说明有一个数组已经合并完了，直接将另外一个尾插到后面
+        while(cur1<mid) {
+            tmp[useSize++] = arr[cur1++];
+        }
+        while(cur2<high) {
+            tmp[useSize++] = arr[cur2++];
+        }
+        //将数据拷贝回原数组，合并完成
+        for (int i = 0; i < high-low; i++) {
+            arr[low+i] = tmp[i];
+        }
     }
 
 
-
-    //快速排序
+    //快速排序，递归实现，时间复杂度O(N*logN),最坏O(N^2)，时间复杂度O(logN)，最坏O(N)，不稳定
     private static void quickSort(int[] arr) {
         quickSortHelper(arr,0,arr.length-1);//闭区间
     }
@@ -55,14 +125,14 @@ public class TestDemo {
             //交换两个元素
             swap(arr,bgn,end);
         }
-        //交换当前元素和基准
+        //交换当前元素和基准值
         swap(arr,end,right);
         return end;
     }
 
-    //堆排序
+    //堆排序，时间复杂度(N*logN)，空间复杂度O(1)，不稳定
     private static void heapSort(int[] arr) {
-        buildHeap(arr);//先建一个堆
+        buildHeap(arr);//先建一个大堆
         for (int i = 0; i < arr.length; i++) {
             //将堆顶元素和当前堆尾元素交换
             swap(arr,0,arr.length-i-1);
@@ -100,7 +170,7 @@ public class TestDemo {
             child = 2 * parent + 1;
         }
     }
-    //向上调整
+    //向上调整，在堆中插入元素时，插在尾部，向上调整
     private static void shiftUp(int[] arr,int index) {
         int child = index;
         int parent = (child-1)/2;
@@ -114,7 +184,7 @@ public class TestDemo {
             parent = (child-1)/2;
         }
     }
-    //冒泡排序
+    //冒泡排序，时间复杂度O(N^2)，空间复杂度N(1)，稳定
     private static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length -1 -i; j++) {
@@ -128,7 +198,7 @@ public class TestDemo {
     }
 
 
-    //选择排序
+    //选择排序，时间复杂度O(N^2),空间复杂度N(1)，不稳定
     private static void selectSort(int[] arr) {
         for (int bound = 0; bound < arr.length; bound++) {
             for (int cur = bound + 1; cur < arr.length; cur++) {
@@ -145,7 +215,7 @@ public class TestDemo {
 
     //希尔排序，分成多组的插入排序
     //因为插入排序 在元素较少时效率较高，在有序性高的时候效率较高
-    //希尔排序的最好时间复杂度为O(N^1.3)，取决于gap的值，二分取复杂度为O(N^2)
+    //希尔排序的最好时间复杂度为O(N^1.3)，取决于gap的值，二分取复杂度为O(N^2)，空间复杂度O(1),不稳定
     private static void shellSort(int[] arr) {
         int gap = arr.length / 2;//分为gap组，最少分为1组
         while(gap>=1) {
@@ -171,7 +241,7 @@ public class TestDemo {
         }
     }
 
-    //插入排序
+    //插入排序，时间复杂度O(N^2),空间复杂度O(1),稳定排序
     private static void insertSort(int[] arr) {
         //将数组分为已排序和待排序两个区间，以bound分隔
         //1个元素默认有序，所以bound从第二个元素开始
