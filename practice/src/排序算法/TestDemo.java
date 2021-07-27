@@ -1,6 +1,8 @@
 package 排序算法;
 
+
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,19 +13,21 @@ import java.util.Arrays;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        //int[] arr = {4,58,2,7,93,39,6};
-        int[] arr = {9,10,1,7,3};
+        int[] arr = {4,58,2,7,93,39,6};
+        //int[] arr = {9,10,1,7,3};
         //insertSort(arr);
         //shellSort(arr);
         //selectSort(arr);
         //bubbleSort(arr);
-        heapSort(arr);
-        //quickSort(arr);
+        //heapSort(arr);
+        quickSort(arr);
+        //quickSortByLoop(arr);
         //mergerSort(arr);
         //mergerSortByLoop(arr);
-
         System.out.println(Arrays.toString(arr));
     }
+
+
     //归并排序，非递归实现
     private static void mergerSortByLoop(int[] arr) {
         //以gap个元素分组
@@ -94,6 +98,26 @@ public class TestDemo {
     }
 
 
+    private static void quickSortByLoop(int[] arr) {
+        Stack<Integer> stack = new Stack<>();
+        //放入待排序区间
+        stack.push(0);
+        stack.push(arr.length-1);
+        while(!stack.empty()) {
+            int end = stack.pop();
+            int start = stack.pop();
+            int pivot =  partition(arr,start,end);
+            if (pivot-start>1) {
+               stack.push(0);
+               stack.push(pivot-1);
+            }
+            if (end-pivot>1) {
+                stack.push(pivot+1);
+                stack.push(end);
+            }
+        }
+    }
+
     //快速排序，递归实现，时间复杂度O(N*logN),最坏O(N^2)，时间复杂度O(logN)，最坏O(N)，不稳定
     private static void quickSort(int[] arr) {
         quickSortHelper(arr,0,arr.length-1);//闭区间
@@ -108,11 +132,24 @@ public class TestDemo {
         quickSortHelper(arr,left,index-1);
         quickSortHelper(arr,index+1,right);
     }
+    //三数取中作为基准
+    private static void selectPivotMiddleOfThree(int[] arr,int start,int end,int mid) {
+        if (arr[end]<arr[mid]) {
+            swap(arr,end,mid);
+        }
+        if (arr[start]<arr[mid]) {
+            swap(arr,start,mid);
+        }
+        if (arr[end]>arr[start]) {
+            swap(arr,end,start);
+        }
+    }
     //真正的排序
     private static int partition(int[] arr, int left, int right) {
         int bgn = left;//从最左侧开始
         int end = right;//
-        int norm = arr[right];//以最右侧元素为基准
+        selectPivotMiddleOfThree(arr,left,right,(left+right)/2);//将中间那个数放到，待取的标准下标
+        int norm = arr[right];//直接以最右侧元素为基准
         while(bgn<end) {
             //从左往右找到一个比基准大的
             while(bgn < end && arr[bgn] <= norm) {
@@ -225,9 +262,9 @@ public class TestDemo {
     }
 
     private static void shellSortGap(int[] arr, int gap) {
-        for (int bound = gap; bound < arr.length; bound++) {
+        for (int bound = gap; bound < arr.length; bound+=gap) {
             int tmp = arr[bound];//拿到当前元素
-            int cur = bound - gap;//拿到当前组以排序的最后一个元素
+            int cur = bound - gap;//拿到当前组已排序的最后一个元素
             //相邻元素相差一个gap
             for(;cur>=0;cur-=gap) {
                 if(arr[cur]>tmp) {
