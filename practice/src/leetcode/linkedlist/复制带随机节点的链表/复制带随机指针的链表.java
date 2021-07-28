@@ -21,7 +21,7 @@ class Node {
     }
 }
 public  class 复制带随机指针的链表 {
-    //方法三
+    //方法三，map拷贝
     public Node copyRandomList(Node head) {
         //为空直接返回
         if(head==null){
@@ -47,7 +47,7 @@ public  class 复制带随机指针的链表 {
         }
         return map.get(head);
     }
-    //方法二
+    //方法二，哈希+递归拷贝
 //    HashMap<Node,Node> map = new HashMap<>();
 //    public Node copyRandomList(Node head) {
 //        //如果为空直接返回
@@ -62,7 +62,7 @@ public  class 复制带随机指针的链表 {
 //        node.random = copyRandomList(head.random);
 //        return node;
 //    }
-    //方法一
+    //方法一，在原链表中复制节点
 //    public Node copyRandomList(Node head) {
 //        if(head==null) return null;
 //

@@ -40,6 +40,9 @@ class MyStack<T>{
     public boolean empty() {
         return this.size == 0;
     }
+    static class a<T> {
+        T[] arr;
+    }
 }
 public class StackTest {
     public static void main(String[] args) {
@@ -51,7 +54,7 @@ public class StackTest {
         System.out.println(s.empty());
 
         System.out.println(s.peek());
-
+        int n = s.peek();
         System.out.println(s.pop());
         System.out.println(s.pop());
         System.out.println(s.pop());

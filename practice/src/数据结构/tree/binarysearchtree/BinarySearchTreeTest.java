@@ -135,18 +135,18 @@ class BinarySearchTree{
             }
         }
     }
-
 }
 public class BinarySearchTreeTest {
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree = new BinarySearchTree();
         binarySearchTree.insert(5);
-        binarySearchTree.insert(6);
-        binarySearchTree.insert(2);
-        binarySearchTree.insert(4);
-        binarySearchTree.insert(9);
-        binarySearchTree.insert(0);
-        binarySearchTree.insert(7);
+//        binarySearchTree.insert(6);
+//        binarySearchTree.insert(2);
+//        binarySearchTree.insert(4);
+//        binarySearchTree.insert(9);
+//        binarySearchTree.insert(0);
+//        binarySearchTree.insert(7);
+        System.out.println(binarySearchTree.remove(5));
         inorder(binarySearchTree.getRoot());
         System.out.println();
         preorder(binarySearchTree.getRoot());

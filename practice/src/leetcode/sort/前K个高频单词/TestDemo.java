@@ -17,17 +17,26 @@ public class TestDemo {
             map.put(data,map.getOrDefault(data,0) + 1);
         }
         ArrayList<String> arrayList = new ArrayList<>(map.keySet());//将key放入
-        Collections.sort(arrayList, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                int n1 = map.get(o1);
-                int n2 = map.get(o2);
-                if (n1==n2) {
-                    return  o1.compareTo(o2);
-                }
-                return n2-n1;
+        //Lambda表达式，匿名方法，参数类型和返回值可以被推导，一条语句时return也可以省略
+        Collections.sort(arrayList, (o1, o2) -> {
+            int n1 = map.get(o1);
+            int n2 = map.get(o2);
+            if (n1==n2) {
+                return  o1.compareTo(o2);
             }
+            return n2-n1;
         });
+//        Collections.sort(arrayList, new Comparator<String>() {//匿名内部类
+//            @Override
+//            public int compare(String o1, String o2) {
+//                int n1 = map.get(o1);
+//                int n2 = map.get(o2);
+//                if (n1==n2) {
+//                    return  o1.compareTo(o2);
+//                }
+//                return n2-n1;
+//            }
+//        });
         return arrayList.subList(0,4);
     }
 }
