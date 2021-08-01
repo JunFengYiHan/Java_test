@@ -51,5 +51,6 @@ public class Solution {
         for (String word:banned) {
             set.add(word);
         }
+        return "";
     }
 }
