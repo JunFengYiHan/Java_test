@@ -29,12 +29,27 @@ class B extends A{
     }
     @Override
     public B run(A a) {
-        System.out.println("B run()");
+       // System.out.println("B run()");
         return (B)a;
     }
 }
 public class TestDemo {
     public static void main(String[] args) {
+
+    }
+    public static void main4(String[] args) {
+        //二进制穷举子集---重点理解
+        int[] arr = {1,2,3,4};
+        for (int i = 0; i < (1<<arr.length); i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if ((i & (1<<j))!=0) {
+                    System.out.print(arr[j]);
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void main3(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < 10_0000; i++) {
