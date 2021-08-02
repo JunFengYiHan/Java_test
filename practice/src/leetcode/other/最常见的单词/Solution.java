@@ -1,9 +1,6 @@
 package leetcode.other.最常见的单词;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -43,7 +40,7 @@ public class Solution {
 //        return ans;
 //    }
     //未完善的代码
-    public String mostCommonWord(String paragraph, String[] banned) {
+    public static String mostCommonWord(String paragraph, String[] banned) {
         //字母全部转小写
         paragraph = paragraph.toLowerCase();
         Set<String> set = new HashSet<>();
@@ -51,6 +48,31 @@ public class Solution {
         for (String word:banned) {
             set.add(word);
         }
-        return "";
+                                       //正则表达式,匹配括号里的符号,+表示一次或者多次
+        String[] strings = paragraph.split("[ !?',;.]+");
+        for (String str:strings) {
+            if (!set.contains(str)) {
+                map.put(str,map.getOrDefault(str,0)+1);
+            }
+        }
+        ArrayList<String> arr = new ArrayList<>(map.keySet());
+        Collections.sort(arr,(o1,o2)->{
+            int n1 = map.get(o1);
+            int n2 = map.get(o2);
+            if (n1==n2) {
+                return o1.compareTo(o2);
+            }
+            return n2 - n1;
+        });
+
+        return arr.get(0);
+    }
+
+    public static void main(String[] args) {
+//        String str = "Bob hit a ball, the hit BALL flew far after it was hit.";
+//        String[] ban = {"hit"};
+        String str = "Bob. hIt, baLl";
+        String[] ban = {"bob", "hit"};
+        mostCommonWord(str,ban);
     }
 }
