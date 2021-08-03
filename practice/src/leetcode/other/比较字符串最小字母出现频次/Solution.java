@@ -8,18 +8,69 @@ package leetcode.other.比较字符串最小字母出现频次;
  * Time: 16:52
  */
 public class Solution {
+    //思路四代码
     public int[] numSmallerByFrequency(String[] queries, String[] words) {
-        int[] ret = new int[queries.length];//结果
-        for (int i = 0; i < queries.length; i++) {
-            int count = find(queries[i]);
-            for (int j = 0; j < words.length; j++) {
-                if (count<find(words[j])) {
-                    ret[i]++;
-                }
-            }
+        int[] ret = new int[queries.length];
+        int[] record = new int[10];//以出现的频次作为下标,最多出现十次
+        //下面的坐标为i-1是为了利用起0下标的空间,开辟11长度的数组可以不减1
+        for (int i = 0; i < words.length; i++) {
+            record[find(words[i])-1]++;//将频次转换成下标,值为出现次数
+        }
+        for (int i = 1; i < record.length; i++) {
+            record[i] = record[i]+record[i-1];//将结果此下标前的所有值求和到当前下标
+        }
+        for (int i = 0; i < ret.length; i++) {
+            ret[i] = record[9] - record[find(queries[i])-1];//所有的减去当前的,剩下的就是答案
         }
         return ret;
     }
+//    //思路三代码
+//    public int[] numSmallerByFrequency(String[] queries, String[] words) {
+//        int[] ret = new int[queries.length];
+//        int[] record = new int[10];//以出现的频次作为下标,最多出现十次
+//        //下面的坐标为i-1是为了利用起0下标,开辟11长度的数组可以不减1
+//        for (int i = 0; i < words.length; i++) {
+//            record[find(words[i])-1]++;//将频次转换成下标,值为出现次数
+//        }
+//        for (int i = 0; i < ret.length; i++) {
+//            int index = find(queries[i])-1;//记录当前平次为下标
+//            //从下一个位置开始
+//            for (int j = index+1; j < record.length; j++) {
+//                ret[i] += record[j];
+//            }
+//        }
+//        return ret;
+//    }
+//    //思路二的代码
+//    public int[] numSmallerByFrequency(String[] queries, String[] words) {
+//        int[] ret = new int[queries.length];//记录待查询最小字母出现的频次
+//        int[] record = new int[words.length];//记录词汇表中的最小字母出现的次数
+//        for (int i = 0; i < record.length; i++) {
+//            record[i] = find(words[i]);
+//        }
+//        for (int i = 0; i < ret.length; i++) {
+//            int count = find(queries[i]);
+//            for (int j = 0; j < record.length; j++) {
+//                if (count<record[j]) {
+//                    ret[i]++;
+//                }
+//            }
+//        }
+//        return ret;
+//    }
+//    //思路一的代码
+//    public int[] numSmallerByFrequency(String[] queries, String[] words) {
+//        int[] ret = new int[queries.length];//结果
+//        for (int i = 0; i < queries.length; i++) {
+//            int count = find(queries[i]);
+//            for (int j = 0; j < words.length; j++) {
+//                if (count<find(words[j])) {
+//                    ret[i]++;
+//                }
+//            }
+//        }
+//        return ret;
+//    }
     //求得当前字符串,最小字母出现的次数
     public int find(String str) {
         int chNums = 0;//最小字母出现的次数
@@ -34,7 +85,7 @@ public class Solution {
         }
         return chNums;
     }
-//    /**大佬的题解
+//    /**以下是大佬的题解和代码
 //     * 思路：遍历 + 记忆化 + 前缀和。这题解是直接给出了多重优化后的思路，在写的时候一遍一遍的思考出更优的方式
 //     *
 //     * 公共方法：find(String str) 用来查询这个字符串最小的字符出现的次数
