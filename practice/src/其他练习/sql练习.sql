@@ -63,6 +63,11 @@ create table teacher(
     birthday date,
     id_number varchar(18)
 );
+
+insert into books values ('Java核心技术','Cay S. Horstman',56.43,'计算机技术');
+insert into  goods (goods_name,unitprice,repertory)  values ('学生书包',18.91,101);
+insert into goods values ('学生书包',18.91,101,null);
+
 create database 08_02练习;
 
 create table exam_result(
