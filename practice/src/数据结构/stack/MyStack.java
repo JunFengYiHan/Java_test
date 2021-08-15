@@ -40,7 +40,4 @@ class MyStack<T>{
     public boolean empty() {
         return this.size == 0;
     }
-    static class a<T> {
-        T[] arr;
-    }
 }
