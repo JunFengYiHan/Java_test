@@ -3,6 +3,7 @@ package 数据结构.stack;
 
 public class StackTest {
     public static void main(String[] args) {
+
         MyStack<Integer> s = new MyStack<>();
         System.out.println(s.push(1));
         System.out.println(s.push(2));

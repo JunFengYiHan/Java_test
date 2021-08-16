@@ -23,7 +23,7 @@ public class MyQueueTest {
         myQueue.add("2");
         myQueue.add("3");
         myQueue.add("4");
-        myQueue.offer("5");
+        System.out.println(myQueue.offer("5"));
         System.out.println(myQueue.peek());
         System.out.println(myQueue.size());
         System.out.println(myQueue.isEmpty());
