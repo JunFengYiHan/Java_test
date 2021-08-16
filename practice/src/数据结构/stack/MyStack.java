@@ -27,6 +27,7 @@ class MyStack<T>{
     }
     //弹出栈顶元素
     public T pop() {
+        //弹出元素时栈为空,抛出异常
         if (empty()) {
             throw new EmptyStackException();
         }
