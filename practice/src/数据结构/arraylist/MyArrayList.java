@@ -12,9 +12,10 @@ import java.util.Arrays;
 public class MyArrayList<E> {
     private E[] elem;
     private int useSize;
+    private static final int DEFAULT_CAPACITY = 5;
 
     public MyArrayList() {
-        this.elem = (E[])new Object[10];
+        this.elem = (E[])new Object[DEFAULT_CAPACITY];
     }
 
     public boolean add(E val) {
@@ -24,6 +25,7 @@ public class MyArrayList<E> {
         this.elem[this.useSize++] = val;
         return true;
     }
+
 
     public E remove (int index) {
         if (index<0||index>=this.useSize) {
@@ -37,7 +39,38 @@ public class MyArrayList<E> {
         return tmp;
     }
 
+    public E get(int index) {
+        rangeCheck(index);
+
+        return this.elem[index];
+    }
+
+    public E set(int index,E val) {
+        rangeCheck(index);
+
+        E oldValue = this.elem[index];
+        this.elem[index] = val;
+        return oldValue;
+    }
+
+    private void rangeCheck(int index) {
+        if (index<0 || index>= this.useSize) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+
+    public int size() {
+        return this.useSize;
+    }
+
     private boolean isFull() {
         return this.useSize==this.elem.length;
+    }
+
+    @Override
+    public String toString() {
+        return "MyArrayList{" +
+                "elem=" + Arrays.toString(elem) +
+                '}';
     }
 }

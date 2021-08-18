@@ -65,7 +65,8 @@ public class TestDemo {
     }
     //方法二,创建一个新类描述depth,pos
 //    public int widthOfBinaryTree(TreeNode root) {
-//        Deque<AnnotatedNode> q = new LinkedList<>();
+//        //Deque<AnnotatedNode> q = new LinkedList<>();
+//        Queue<AnnotatedNode> q = new LinkedList<>();
 //        q.add(new AnnotatedNode(root,0,0));
 //        int maxWidth = 0;
 //        int left = 0;//保留最近一层,最左侧的下标

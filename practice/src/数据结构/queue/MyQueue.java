@@ -19,15 +19,14 @@ public class MyQueue<E> {
 
     private Node<E> head;
     private Node<E> last;
-    private int useSize;
-
+    private int size;
     public MyQueue() {
 
     }
     //添加元素
     public boolean add(E val) {
         Node<E> node = new Node<>(val);
-        this.useSize++;
+        this.size++;
         if (this.head==null) {
             this.head = node;
             this.last = node;
@@ -49,7 +48,7 @@ public class MyQueue<E> {
         }
 
         Node<E> tmp = this.head;
-        this.useSize--;
+        this.size--;
         if (this.head == this.last) {
             this.head = null;
             this.last = null;
@@ -66,10 +65,10 @@ public class MyQueue<E> {
     }
     //判断队列是否为空
     public boolean isEmpty() {
-        return this.useSize == 0;
+        return this.size == 0;
     }
-    //
+    //队列当前大小
     public int size() {
-        return this.useSize;
+        return this.size;
     }
 }
