@@ -1,5 +1,10 @@
 package 其他练习.学校练习;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
+import static 其他练习.学校练习.TestOne.narNum;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -9,97 +14,58 @@ package 其他练习.学校练习;
  */
 public class TestDemo {
     public static void main(String[] args) {
+
+        Account account = new Account("张三",100);
+        System.out.println("标识符: " + account.getFlag());
+        System.out.println("客户名称: " + account.getName());
+        System.out.println("初始余额: " + account.getBalance());
+        System.out.println("初始密码: " + account.getPassword());
+        System.out.println("开户日期: " + account.getDate());
+        System.out.println("=======================");
+        account.setName("李四");//修改账户名为李四
+        System.out.println("修改后客户名称: " + account.getName());
+        account.deposit(45);//存入45
+        System.out.println("存款后余额: " + account.getBalance());
+        account.withdrawal(50);//取出50
+        account.withdrawal(150);//取出150,会提示余额不足
+        System.out.println("取款后余额: " + account.getBalance());
+        account.setPassword("147258");//修改密码为147258
+        System.out.println("修改后的密码密码: " + account.getPassword());
+
+
+
+//        Rectangle rectangle = new Rectangle(8,10,"红色");
+//        System.out.println("初始宽为 " + rectangle.getWidth());
+//        System.out.println("初始高为 " + rectangle.getHeight());
+//        System.out.println("初始面积为: " + rectangle.getArea());
+//        System.out.println("初始周长为 " + rectangle.getLength());
+//        System.out.println("初始颜色为 " + rectangle.getColor());
+//        System.out.println("===================================");
+//        rectangle.setWidth(4);
+//        rectangle.setHeight(5);
+//        rectangle.setColor("白色");
+//        System.out.println("修改后宽为 " + rectangle.getWidth());
+//        System.out.println("修改后高为 " + rectangle.getHeight());
+//        System.out.println("修改后面积为: " + rectangle.getArea());
+//        System.out.println("修改后周长为 " + rectangle.getLength());
+//        System.out.println("修改后颜色为 " + rectangle.getColor());
+
+
+//        Student s1 = new Student("20208988","刘豪",88,69,95);
+//        System.out.println("学号 " + s1.getId());
+//        System.out.println("姓名 " + s1.getName());
+//        System.out.println("总分: " + s1.sum());
+//        System.out.println("平均分: " + s1.average());
+//        System.out.println("最高分: " + s1.getMaxScore());
+//        System.out.println("最低分: " + s1.getMinScore());
+
         //narNum(7);
         //func();
         //fact(20);
         //sum(8,10);
         //perfectNum(1000);
-        findMaxNum(8888);
+        //findMaxNum(8888);
         //print(5);
     }
-    public static void print(int n) {
-        for (int i = 1; i <= n; i++) {
-            for (int j = 0; j < n-i; j++) {
-                System.out.print(" ");//打印合适的空格
-            }
-            for (int j = 0; j < i; j++) {
-                System.out.print("* ");//打印合适的星号
-            }
-            System.out.println();
-        }
 
-    }
-
-    public static void findMaxNum(int bound) {
-        int MaxN = 0;//存放最大得n,可省
-        for (int i = 1; (1.0+i)*i/2 < bound; i++) {
-            MaxN = i;//不断更新MaxN
-        }
-        //MaxN==i-1
-        System.out.println(MaxN);
-    }
-
-    public static void perfectNum(int end) {
-        for (int i = 1; i <= end; i++) {
-            int sum = 0;//存放当前数因子和
-            for (int j = 1; j <= i/2; j++) {
-                if (i%j==0) {
-                    sum += j;//累加因子
-                }
-                //判断并输出完数
-                if (sum==i) {
-                    System.out.println(sum+"是"+end+"以内得完数");
-                }
-            }
-        }
-    }
-
-    public static void sum(int val,int n) {
-        double sum = 0.0;//存放和
-        int tmp = 0;//存放当前数
-        for (int i = 0; i < n; i++) {
-            tmp = tmp*10 + val;//求得当前数
-            sum += tmp;//累加
-        }
-        System.out.println(sum);
-    }
-
-    public static void fact(int n) {
-        double sum = 0.0;//存放阶乘和
-        double s = 1.0;//存放阶乘
-        for (int i = 1; i <= n; i++) {
-            s *= i;//求得当前i得阶乘
-            sum += s;//累加阶乘
-        }
-        System.out.println(sum);
-    }
-
-    public static void func() {
-        int sum = 0;//和
-        int symbol = 1;//符号
-
-        for (int i = 13; i <= 1003; i+=10) {
-            sum += symbol*i;//求和
-            symbol = -symbol;//更新符号
-        }
-        System.out.println(sum);
-    }
-
-    public static void narNum(int n) {
-        int start = (int)Math.pow(10,n-1);
-        int end = (int)Math.pow(10,n);
-        for (int i = start; i < end; i++) {
-            int tmp = i;//防止修改i
-            int sum = 0;//存放每次该数的自幂和
-            //求各位次方之和
-            while(tmp!=0) {
-                sum+=Math.pow(tmp%10,n);
-                tmp/=10;
-            }
-            //和等于该数说明是自幂数
-            if (sum==i) {
-                System.out.println(i+"是一个"+n+"位的自幂数");
-            }
-        }
-    }
 }
