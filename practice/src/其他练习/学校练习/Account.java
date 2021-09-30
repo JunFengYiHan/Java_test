@@ -13,8 +13,8 @@ import java.util.Random;
  * Time: 19:40
  */
 public class Account {
-    private final char[] base = createBase();//标识符取值的目标数组
-    private HashSet<String> flagSet = new HashSet<>();//存放已使用过的标识符,确保唯一
+    private static final char[] base = createBase();//标识符取值的目标数组
+    private static final HashSet<String> flagSet = new HashSet<>();//存放已使用过的标识符,确保唯一
     private final String flag = createFlag();//标识符
     private String name;//账户名
     private final Date date =  new Date();;//开户日期
@@ -32,7 +32,7 @@ public class Account {
         this.balance = new BigDecimal(value);
     }
     //产生一个存放英文字母和数字的目标数组
-    private char[] createBase() {
+    private static char[] createBase() {
         char[] base = new char[62];
         int use = 0;
         char i = '0';
@@ -57,7 +57,7 @@ public class Account {
             sb = new StringBuilder();
             while(sb.length()<11) {
                 int index = random.nextInt(62);
-                sb.append(this.base[index]);
+                sb.append(base[index]);
                 if (index<=9) {
                     num = true;
                 }
