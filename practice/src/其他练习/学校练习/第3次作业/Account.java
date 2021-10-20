@@ -1,4 +1,4 @@
-package 其他练习.学校练习;
+package 其他练习.学校练习.第3次作业;
 
 import java.math.BigDecimal;
 import java.util.Date;
