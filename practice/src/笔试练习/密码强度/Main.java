@@ -41,7 +41,7 @@ public class Main {
         up=false;
         sy=false;
         score+=tmp;
-        System.out.println(score);
+        //System.out.println(score);
         if (score>=90) {
             return "VERY_SECURE";
         }else if (score>=80) {
@@ -55,7 +55,7 @@ public class Main {
         }else if (score>=25) {
             return "WEAK";
         }else {
-            return "VERY_WEAL";
+            return "VERY_WEAK";
         }
     }
     //长度得分
