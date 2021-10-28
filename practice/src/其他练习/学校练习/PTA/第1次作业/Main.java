@@ -1,4 +1,4 @@
-package 其他练习.学校练习.PTA;
+package 其他练习.学校练习.PTA.第1次作业;
 
 import java.util.Scanner;
 
