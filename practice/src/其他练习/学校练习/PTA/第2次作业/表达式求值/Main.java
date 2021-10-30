@@ -1,4 +1,4 @@
-package 其他练习.学校练习.PTA.第2次作业;
+package 其他练习.学校练习.PTA.第2次作业.表达式求值;
 
 import java.util.Date;
 import java.util.Scanner;

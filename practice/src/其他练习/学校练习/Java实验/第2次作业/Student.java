@@ -1,4 +1,4 @@
-package 其他练习.学校练习.第2次作业;
+package 其他练习.学校练习.Java实验.第2次作业;
 
 /**
  * Created with IntelliJ IDEA.

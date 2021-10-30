@@ -1,8 +1,6 @@
-package 其他练习.学校练习;
+package 其他练习.学校练习.Java实验;
 
-import 其他练习.学校练习.第4次作业.TestString;
-import 其他练习.学校练习.第5次作业.Circle;
-import 其他练习.学校练习.第5次作业.Cylinder;
+import 其他练习.学校练习.Java实验.第5次作业.Cylinder;
 
 import java.util.Scanner;
 
