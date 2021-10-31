@@ -16,15 +16,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNextLine()) {
-            long s1=System.currentTimeMillis();
-            long d1=new Date().getTime();
+            //long s1=System.currentTimeMillis();
+            //long d1=new Date().getTime();
             String str = sc.nextLine();
             str = transition(str);
             System.out.println(evaluation(str));
-            long s2=System.currentTimeMillis();
-            long d2=new Date().getTime();
-            System.out.println(d2-d1+"ms");
-            System.out.println(s2-s1+"ms");
+//            long s2=System.currentTimeMillis();
+//            long d2=new Date().getTime();
+//            System.out.println(d2-d1+"ms");
+//            System.out.println(s2-s1+"ms");
         }
     }
     //后缀表达式求值
