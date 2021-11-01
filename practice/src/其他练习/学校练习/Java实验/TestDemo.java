@@ -1,8 +1,6 @@
 package 其他练习.学校练习.Java实验;
 
-import 其他练习.学校练习.Java实验.第5次作业.Cylinder;
-
-import java.util.Scanner;
+import 其他练习.学校练习.Java实验.第6次作业.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,11 +11,23 @@ import java.util.Scanner;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        double r = sc.nextDouble();
-        double h = sc.nextDouble();
-        Cylinder cylinder = new Cylinder(r,h);
-        cylinder.dispVol();
+        Shape s1 = new Straight(10);
+        Shape s2 = new Circle(10);
+        System.out.println("直线的大小为 "+s1.size());
+        System.out.println("圆的大小为 "+s2.size());
+//        Shapes s1 = new Triangle(6,8,10);
+//        Shapes s2 = new Rectangle(4,5);
+//        Shapes s3 = new Circle(5);
+//        System.out.println("三角形的面积为: "+s1.getArea());
+//        System.out.println("矩形的面积为 "+s2.getArea());
+//        System.out.println("圆形的面积为: "+s3.getArea());
+
+
+//        Scanner sc = new Scanner(System.in);
+//        double r = sc.nextDouble();
+//        double h = sc.nextDouble();
+//        Cylinder cylinder = new Cylinder(r,h);
+//        cylinder.dispVol();
 //        Circle circle = new Circle(5);
 //        System.out.println(circle.getRadius());
 //        System.out.println(circle.getPerimeter());
@@ -57,22 +67,21 @@ public class TestDemo {
 //        System.out.println("修改后的密码密码: " + account.getPassword());
 
 
-
-//        Rectangle rectangle = new Rectangle(8,10,"红色");
-//        System.out.println("初始宽为 " + rectangle.getWidth());
-//        System.out.println("初始高为 " + rectangle.getHeight());
-//        System.out.println("初始面积为: " + rectangle.getArea());
-//        System.out.println("初始周长为 " + rectangle.getLength());
-//        System.out.println("初始颜色为 " + rectangle.getColor());
+//        Rectangle s2 = new Rectangle(8,10,"红色");
+//        System.out.println("初始宽为 " + s2.getWidth());
+//        System.out.println("初始高为 " + s2.getHeight());
+//        System.out.println("初始面积为: " + s2.getArea());
+//        System.out.println("初始周长为 " + s2.getLength());
+//        System.out.println("初始颜色为 " + s2.getColor());
 //        System.out.println("===================================");
-//        rectangle.setWidth(4);
-//        rectangle.setHeight(5);
-//        rectangle.setColor("白色");
-//        System.out.println("修改后宽为 " + rectangle.getWidth());
-//        System.out.println("修改后高为 " + rectangle.getHeight());
-//        System.out.println("修改后面积为: " + rectangle.getArea());
-//        System.out.println("修改后周长为 " + rectangle.getLength());
-//        System.out.println("修改后颜色为 " + rectangle.getColor());
+//        s2.setWidth(4);
+//        s2.setHeight(5);
+//        s2.setColor("白色");
+//        System.out.println("修改后宽为 " + s2.getWidth());
+//        System.out.println("修改后高为 " + s2.getHeight());
+//        System.out.println("修改后面积为: " + s2.getArea());
+//        System.out.println("修改后周长为 " + s2.getLength());
+//        System.out.println("修改后颜色为 " + s2.getColor());
 
 
 //        Student s1 = new Student("20208988","刘豪",88,69,95);
