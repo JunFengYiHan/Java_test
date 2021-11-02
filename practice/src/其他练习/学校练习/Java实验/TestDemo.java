@@ -1,6 +1,9 @@
 package 其他练习.学校练习.Java实验;
 
 import 其他练习.学校练习.Java实验.第6次作业.*;
+import 其他练习.学校练习.Java实验.第7次作业.DangerException;
+import 其他练习.学校练习.Java实验.第7次作业.Goods;
+import 其他练习.学校练习.Java实验.第7次作业.Machine;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,10 +14,24 @@ import 其他练习.学校练习.Java实验.第6次作业.*;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        Shape s1 = new Straight(10);
-        Shape s2 = new Circle(10);
-        System.out.println("直线的大小为 "+s1.size());
-        System.out.println("圆的大小为 "+s2.size());
+        Goods g1 = new Goods("矿泉水");
+        Goods g2 = new Goods("毒品");
+        Goods g3 = new Goods("管制刀具");
+        Machine machine = new Machine();
+        try {
+            machine.checkBag(g1);
+            machine.checkBag(g2);
+            machine.checkBag(g3);
+        } catch (DangerException e) {
+            e.toShow();
+            System.out.println("危险物品已处理");
+        }
+
+
+//        Shape s1 = new Straight(10);
+//        Shape s2 = new Circle(10);
+//        System.out.println("直线的大小为 "+s1.size());
+//        System.out.println("圆的大小为 "+s2.size());
 //        Shapes s1 = new Triangle(6,8,10);
 //        Shapes s2 = new Rectangle(4,5);
 //        Shapes s3 = new Circle(5);
