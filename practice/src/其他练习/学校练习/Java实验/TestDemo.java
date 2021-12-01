@@ -4,6 +4,9 @@ import 其他练习.学校练习.Java实验.第6次作业.*;
 import 其他练习.学校练习.Java实验.第7次作业.DangerException;
 import 其他练习.学校练习.Java实验.第7次作业.Goods;
 import 其他练习.学校练习.Java实验.第7次作业.Machine;
+import 其他练习.学校练习.Java实验.第8次作业.*;
+
+import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,18 +17,56 @@ import 其他练习.学校练习.Java实验.第7次作业.Machine;
  */
 public class TestDemo {
     public static void main(String[] args) {
-        Goods g1 = new Goods("矿泉水");
-        Goods g2 = new Goods("毒品");
-        Goods g3 = new Goods("管制刀具");
-        Machine machine = new Machine();
-        try {
-            machine.checkBag(g1);
-            machine.checkBag(g2);
-            machine.checkBag(g3);
-        } catch (DangerException e) {
-            e.toShow();
-            System.out.println("危险物品已处理");
-        }
+        Info info = new Info();
+        MyThread4 m4 = new MyThread4(info);
+        MyThread5 m5 = new MyThread5(info);
+        new Thread(m4).start();
+        new Thread(m5).start();
+
+//        MyThread3 m1 = new MyThread3(1,25);
+//        MyThread3 m2 = new MyThread3(26,50);
+//        MyThread3 m3 = new MyThread3(51,75);
+//        MyThread3 m4 = new MyThread3(76,100);
+//        new Thread(m1).start();
+//        new Thread(m2).start();
+//        new Thread(m3).start();
+//        new Thread(m4).start();
+//        try {
+//            Thread.sleep(100);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(m1.getSum()+m2.getSum()+m3.getSum()+m4.getSum());
+
+
+//        Windows w = new Windows();
+//
+//        new Thread(w,"窗口A").start();
+//        new Thread(w,"窗口B").start();
+//        new Thread(w,"窗口C").start();
+
+//        MyThread1 mt1 = new MyThread1();
+//        MyThread2 mt2 = new MyThread2();
+//        new Thread(mt1).start();
+//        try {
+//            Thread.sleep(10);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        new Thread(mt2).start();
+
+//        Goods g1 = new Goods("矿泉水");
+//        Goods g2 = new Goods("毒品");
+//        Goods g3 = new Goods("管制刀具");
+//        Machine machine = new Machine();
+//        try {
+//            machine.checkBag(g1);
+//            machine.checkBag(g2);
+//            machine.checkBag(g3);
+//        } catch (DangerException e) {
+//            e.toShow();
+//            System.out.println("危险物品已处理");
+//        }
 
 
 //        Shape s1 = new Straight(10);
