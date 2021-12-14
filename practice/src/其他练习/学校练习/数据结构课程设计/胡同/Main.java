@@ -1,4 +1,4 @@
-package 其他练习.学校练习.课程设计.胡同;
+package 其他练习.学校练习.数据结构课程设计.胡同;
 
 import java.util.Scanner;
 import java.util.Stack;

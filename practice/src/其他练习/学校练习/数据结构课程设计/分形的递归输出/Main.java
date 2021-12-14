@@ -1,4 +1,4 @@
-package 其他练习.学校练习.课程设计.分形的递归输出;
+package 其他练习.学校练习.数据结构课程设计.分形的递归输出;
 
 /**
  * Created with IntelliJ IDEA.

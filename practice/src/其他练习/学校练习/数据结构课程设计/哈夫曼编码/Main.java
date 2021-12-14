@@ -1,4 +1,4 @@
-package 其他练习.学校练习.课程设计.哈夫曼编码;
+package 其他练习.学校练习.数据结构课程设计.哈夫曼编码;
 
 import java.util.Scanner;
 
@@ -30,6 +30,8 @@ class Node {
 }
 
 public class Main {
+    //static int wpl;//记录带权路径
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Node[] arr = new Node[52];//哈夫曼树顺序储存
@@ -41,6 +43,8 @@ public class Main {
         String str = sb.toString().replace(":", "");
         init(arr, str);
         createTree(arr);
+//        System.out.println("带权路径长度为: " + wpl);
+//        System.out.println("哈夫曼编码为:");
         huffman(arr);
         sc.close();
     }
@@ -86,6 +90,7 @@ public class Main {
                 }
             }
             arr[j] = new Node(arr[i1].weight + arr[i2].weight);
+            //wpl += arr[j].weight;
             arr[j].left = i1;
             arr[j].right = i2;
             arr[i1].parent = j;

@@ -1,7 +1,5 @@
-package 其他练习.学校练习.课程设计.迷宫寻路;
+package 其他练习.学校练习.数据结构课程设计.迷宫寻路;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
 /**

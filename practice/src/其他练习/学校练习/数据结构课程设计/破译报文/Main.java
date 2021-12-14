@@ -1,4 +1,4 @@
-package 其他练习.学校练习.课程设计.破译报文;
+package 其他练习.学校练习.数据结构课程设计.破译报文;
 
 import java.util.HashMap;
 import java.util.Map;
