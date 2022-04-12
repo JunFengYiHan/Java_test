@@ -32,7 +32,7 @@ public class Main {
         display(arr);//打印所需结果
         sc.close();
     }
-
+    //打印结果                       层序遍历的结果
     private static void display(ArrayList<ArrayList<Node>> arr) {
         System.out.print("R:");
         for (int i = 0; i < arr.size(); i++) {
@@ -45,7 +45,7 @@ public class Main {
             System.out.printf(" %d",tmp.get(0).val);
         }
     }
-
+    //拿到层序遍历的结果   层序遍历结果                          树根
     private static ArrayList<ArrayList<Node>> sequence(Node root) {
         ArrayList<ArrayList<Node>> ret = new ArrayList<>();
         Queue<Node> queue = new LinkedList<>();
@@ -70,12 +70,12 @@ public class Main {
     }
 
     static int index;
-
+    //创建树        返回根节点              中序结果          后序结果
     private static Node createTree(int[] inorder, int[] postorder) {
         index = postorder.length - 1;
         return create(inorder, postorder, 0, postorder.length - 1);
     }
-
+    //真正的创建代码,不断建右子树     中序遍历结果     后序遍历结果       中序左边界      中序有边界
     private static Node create(int[] inorder, int[] postorder, int left, int right) {
         if (index < 0 || left > right) {
             return null;
@@ -87,7 +87,7 @@ public class Main {
         root.left = create(inorder, postorder, left, pos - 1);
         return root;
     }
-
+    //查找对应下标                中序遍历结果    左边界     有边界   要寻找的值
     private static int find(int[] inorder, int left, int right, int k) {
         for (int i = left; i <= right; i++) {
             if (inorder[i] == k) {
@@ -96,7 +96,7 @@ public class Main {
         }
         return -1;
     }
-
+    //输入数据                      中序遍历结果        后序遍历结果
     private static void inputDate(int[] inorder, int[] postorder) {
         //Scanner sc = new Scanner(System.in);
         for (int i = 0; i < inorder.length; i++) {
