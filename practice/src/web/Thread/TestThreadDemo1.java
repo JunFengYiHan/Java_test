@@ -1,4 +1,4 @@
-package web;
+package web.Thread;
 
 /**
  * Created with IntelliJ IDEA.

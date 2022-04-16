@@ -1,37 +1,34 @@
-package web;
-
-import java.util.concurrent.locks.ReentrantLock;
+package web.Thread;
 
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * User: 柒
- * Date: 2022-04-15
- * Time: 22:13
+ * Date: 2022-04-12
+ * Time: 23:06
  */
-public class ThreadDemo7 {
-    static int count = 0;//可以通过传入参数形成公平锁和非公平锁,公平锁:true 非公平锁:false
-    static ReentrantLock locker = new ReentrantLock();
-    static void increment() {
-        locker.lock();
+public class TestThreadDemo4 {
+    private static  int count = 0;
+
+    synchronized public static void func(){
         count++;
-        locker.unlock();
     }
     public static void main(String[] args) {
-        Thread t1 = new Thread() {
+        Thread t1 = new Thread(){
             @Override
             public void run() {
-                for (int i = 0; i < 100; i++) {
-                    increment();
+                for (int i = 0; i < 10000; i++) {
+                    func();
                 }
             }
         };
         t1.start();
+
         Thread t2 = new Thread(){
             @Override
             public void run() {
-                for (int i = 0; i < 100; i++) {
-                    increment();
+                for (int i = 0; i < 10000; i++) {
+                    func();
                 }
             }
         };
