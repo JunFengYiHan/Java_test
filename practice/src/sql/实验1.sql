@@ -4,23 +4,23 @@ create database student;
 use student;
 
 create table student(
-    sno char(8),
-    sname varchar(8),
-    ssex char(2),
-    sage int,
-    sdept varchar(20)
+    sno char(8),-- 学号
+    sname varchar(8), -- 姓名
+    ssex char(2), -- 性别
+    sage int,-- 年龄
+    sdept varchar(20) -- 系别
 );
 create table course(
-    cno char(3),
-    cname varchar(20),
-    cpno char(3),
-    credit numeric(3,1)
+    cno char(3),-- 课程号
+    cname varchar(20), -- 课程名称
+    cpno char(3),-- 系别
+    credit numeric(3,1) -- 学分
 );
 
 create table sc(
-    sno char(8),
-    cno char(3),
-    grade numeric(4,1)
+    sno char(8),-- 学号
+    cno char(3),-- 课程号
+    grade numeric(4,1)-- 成绩
 );
 -- truncate table tabName[表名],清空表数据
 --7
@@ -28,6 +28,9 @@ insert  student values ('08001','张力','男',18,'cs'),('08002','李丽','女',
 ('08003','赵海','男',20,'ma'),('08004','张那','女',17,'cs'),('08005','刘晨','男',18,'is'),
 ('08006','刘丹丹','女',17,'ma'),('08007','刘立','男',21,'cs'),('08008','王江','男',19,'cs'),
 ('08009','高晓','男',20,'is'),('08010','张丽','女',19,'cs');
+
+insert course values ('001','数据库','005',4),('002','高等数学',null,2),('003','信息系统','001',4),
+('004','操作系统','006',3),('005','数据结构','007',4),('006','数据处理',null,2),('007','C语言','006',4);
 
 
 insert sc values ('08001','002',100),('08001','003',95),('08001','004',90),('08001','006',100),
@@ -50,7 +53,6 @@ create index grade on sc(grade asc);
 --12
 drop index sname on student;
 drop index grade on sc;
-
 
 
 
