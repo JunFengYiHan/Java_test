@@ -95,6 +95,8 @@ public class TestDemo {
 
 
     public static void run(PCB cur) {
+        print(cur);
+
         int tmpT = fragment;
         while (tmpT > 0 && cur.runTime > 0) {
             totalTime++;
@@ -108,7 +110,6 @@ public class TestDemo {
             cur.lifeCycle = totalTime - cur.arrive;//计算周转时间
             retQueue.add(cur);//放入最终结果队列,方便打印
         }
-        print(cur);
     }
 
     public static void print(PCB cur) {
