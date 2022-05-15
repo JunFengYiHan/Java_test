@@ -157,7 +157,7 @@ update exam_result set math = 80 where name='孙悟空';
 delete from exam_result;
 delete from exam_result where math is null;
 
--- 约束,对插入的数据进行校验
+-- 约束,会对插入该列的数据进行校验
 
 -- 非空,not null
 create table stu(id int not null ,name varchar(20));
@@ -166,17 +166,35 @@ create table stu1(id int unique ,name varchar(20));
 -- 默认值,default
 create table stu2(id int ,name varchar(20) default 未命名);
 -- 主键,primary key,相当于 unique+not null,设置自增主键auto_increment;
-create table stu3(id int primary key,name varchar(20));
--- 外键,foreign key;
-
+create table stu3(id int primary key auto_increment,name varchar(20));
+-- 外键,foreign key,需要依赖另外一个表的主键,如果已经建立链接那么对应的主键就无法修改
+create table stu4(id int,name varchar(20) primary key,foreign key (id) references stu3 (id));
 -- 自定义条件,check,mysql5并不生效
+create table stu5(sex varchar(2), check (sex='男' or sex='女'));
 
+-- 聚合查询
+select count(*) from exam_result;
+-- 下面四个针对数值才有意义,其他类型无效
+select sum(*) from exam_result;
+select avg(chinese) from exam_result;
+select max(math) from exam_result;
+select min(english) from exam_result;
+-- 分组查询 group by,使用having添加条件
+select name,chinese from exam_result group by chinese having chinese > 60;
+select name,chinese from exam_result  where chinese > (select avg(chinese) from exam_result);
 
+-- 联合查询
+-- 笛卡尔积
+-- 1. select from 表1,表2...,表n where 条件;只能内连接
+-- 2. select from 表1 join 表2 on 条件 join 表3 on 条件....;既能内连接,又能外连接
+-- 左外连接 select from 表1 left join 表2 on 条件...;左侧表数据为主
+-- 右外连接 select from 表1 right join 表2 on 条件...;右侧表数据为主
+-- mysql不支持全外连接
+-- 自链接,将需要比较的行,转换为列,需要将自链接的表分别取别名
 
-
-
-
-
-
+-- 合并查询,可以多表数据合并
+-- union 重复的数据会去重
+-- union all 不会去重
+select*from 表1 union select*from 表2;
 
 
