@@ -186,9 +186,13 @@ select name,chinese from exam_result  where chinese > (select avg(chinese) from 
 -- 联合查询
 -- 笛卡尔积
 -- 1. select from 表1,表2...,表n where 条件;只能内连接
+select*from exam_result,test_data where exam_result.id = test_data.id;
 -- 2. select from 表1 join 表2 on 条件 join 表3 on 条件....;既能内连接,又能外连接
 -- 左外连接 select from 表1 left join 表2 on 条件...;左侧表数据为主
 -- 右外连接 select from 表1 right join 表2 on 条件...;右侧表数据为主
+select * from exam_result join test_data on exam_result.id = test_data.id;
+select * from exam_result left join test_data on exam_result.id = test_data.id;
+select * from exam_result right join test_data on exam_result.id = test_data.id;
 -- mysql不支持全外连接
 -- 自链接,将需要比较的行,转换为列,需要将自链接的表分别取别名
 
