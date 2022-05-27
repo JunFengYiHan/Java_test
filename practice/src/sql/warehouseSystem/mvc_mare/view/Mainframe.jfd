@@ -1,0 +1,2259 @@
+JFDML JFormDesigner: "7.0.5.4.420" Java: "11.0.7" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.GridLayout ) ) {
+			name: "this"
+			"visible": true
+			"title": "仓库管理系统"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+				name: "panel1"
+				add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+					name: "tabbedPane1"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+						name: "panel4"
+						add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+							name: "tabbedPane3"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {seq t {space :p:16:p, par l {seq {par l {seq l {comp label39:::p:71:p, space :::p, comp textField31:::p:99:p}, seq l {comp label36:::p:71:p, space :::p, comp textField34:::p:99:p}}, space :p:26:p, par l {seq l {comp label34:::p:71:p, space u:::p, par l {comp textField29:::p:99:p, comp textField32:::p:99:p}}, seq l {space :6:6:p, comp label37:::p::p, space :p:39:p, comp textField35:::p:99:p, space :p:31:p, comp label38:::p:71:p, space s:::p, comp textField36:::p:99:p}}}, seq l {comp label32:::p:71:p, space :::p, comp textField28:::p:99:p, space :p:32:p, comp label40:::p:71:p, space :p:149:p, par l {seq {comp label35:::p:71:p, space :::p, comp textField33:::p:99:p}, seq {comp label33:::p:71:p, space :::p, comp textField30:::p:99:p}}}, seq l {space :p:102:p, comp button9:::p:157:p, space :p:135:p, comp button10:::p:157:p}}, space :0:123:x}}"
+								"$verticalGroup": "par l {seq l {space :p:26:p, par b {comp label32::b:p:31:p, comp label33::b:p:31:p, comp textField30::b:p::p, comp textField28::b:p::p, comp label40::b:p:31:p, comp textField29::b:p::p}, space :::p, par l {par b {comp label39::b:p:38:p, comp textField31::b:p::p, comp label34::b:p:31:p, comp textField32::b:p::p}, par l:t {comp textField33:::p::p, comp label35:::p:31:p}}, space :::p, par l {par b {comp label36::b:p:31:p, comp textField34::b:p::p, comp label37::b:p:31:p, comp textField35::b:p::p}, par b:l {comp label38::b:p:31:p, comp textField36::b:p::p}}, par l {seq {space :p:78:p, comp button10:::p:53:p}, seq l {space :p:87:p, comp button9:::p:53:p}}, space ::236:x}}"
+							} ) {
+								name: "panel10"
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label32"
+									"text": "出库单号："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label33"
+									"text": "用户："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label34"
+									"text": "商品名称："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label35"
+									"text": "厂家："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label36"
+									"text": "数量："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label37"
+									"text": "日期："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label38"
+									"text": "提货员工："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label39"
+									"text": "商品号："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label40"
+									"text": "仓库号："
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button9"
+									"text": "确认"
+									"font": &SwingDerivedFont0 new com.jformdesigner.model.SwingDerivedFont( null, 1, 6, false )
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button10"
+									"text": "重置"
+									"font": #SwingDerivedFont0
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button10", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField28"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField29"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField30"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField31"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField32"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField33"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField34"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField35"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField36"
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "填写出库表"
+							} )
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {seq l {space :::p, comp label15:::p:356:p, space ::377:x}, comp panel25::t:::x, comp scrollPane2::l:::x}"
+								"$verticalGroup": "par l {seq l {space :::p, comp label15:::p:27:p, space :::p, comp panel25:::p::p, space :::p, comp scrollPane2::::379:x}}"
+							} ) {
+								name: "panel24"
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq {space :::p, par l {comp label9:::p:50:p, comp label10:::p:65:p}, space s:::p, par l {comp textField8:::p:112:p, comp textField7::l:p:112:p}, space :p:27:p, par l:::p {comp label12::::73:x, comp label11::::73:x}, space :::p, par l:::p {comp textField10::::121:x, comp textField9::::121:x}, space :p:29:p, par t {comp label13:::p:69:p, comp label14:::p:69:p}, space s:::p, par l {comp textField11::l:p:121:p, comp textField12::l:p:121:p}, space :p:26:p, par l {comp button4:::p::p, comp button3:::p::p}, space :::x}}"
+									"$verticalGroup": "par l {seq l {space :::p, par b {comp label9::b:p:27:p, comp textField9::b:p::p, comp label13::b:p:30:p, comp textField11::b:p::p, comp button3::b:p::p, comp label11::b:p:30:p, comp textField7::b:p::p}, space :::p, par b {comp textField10::b:p::p, comp textField8::b:p::p, comp label10::b:::x, comp label14::b:p:30:p, comp textField12::b:p::p, comp button4::b:p::p, comp label12::b:p::p}, space :::p}}"
+								} ) {
+									name: "panel25"
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label9"
+										"text": "用户ID："
+										"font": &SwingDerivedFont1 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label10"
+										"text": "商品名称："
+										"font": &SwingDerivedFont2 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField7"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField8"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label11"
+										"text": "厂家："
+										"font": &SwingDerivedFont3 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label12"
+										"text": "出库日期："
+										"font": &SwingDerivedFont4 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField9"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField10"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label13"
+										"text": "出库单号："
+										"font": &SwingDerivedFont5 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label14"
+										"text": "提货员工："
+										"font": &SwingDerivedFont6 new com.jformdesigner.model.SwingDerivedFont( null, 1, 0, false )
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField11"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField12"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button3"
+										"text": "查询"
+										"font": &SwingDerivedFont7 new com.jformdesigner.model.SwingDerivedFont( null, 1, 1, false )
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button3", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button4"
+										"text": "重置"
+										"font": &SwingDerivedFont8 new com.jformdesigner.model.SwingDerivedFont( null, 1, 1, false )
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button4", true ) )
+									} )
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label15"
+									"text": "请在以下查询框内输入您要查询的信息："
+									"font": &SwingDerivedFont9 new com.jformdesigner.model.SwingDerivedFont( null, 1, 6, false )
+								} )
+								add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+									name: "scrollPane2"
+									add( new FormComponent( "javax.swing.JTable" ) {
+										name: "table2"
+										"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( "" )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+										}, new java.util.Vector {
+											add( "出库单号" )
+											add( "仓库号" )
+											add( "商品号" )
+											add( "商品名称" )
+											add( "用户" )
+											add( "厂家" )
+											add( "日期" )
+											add( "数量" )
+											add( "提货员工" )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+										} )
+									} )
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "查询出库表"
+							} )
+						} )
+					}, new FormLayoutConstraints( null ) {
+						"title": "出库管理"
+						"icon": new com.jformdesigner.model.SwingIcon( 2, "FileChooser.listViewIcon" )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+						name: "panel5"
+						add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+							name: "tabbedPane2"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {seq l {space :::p, comp label2:::p:356:p, space ::377:x}, comp panel23::t:::x, comp scrollPane1::l::812:x}"
+								"$verticalGroup": "par l {seq l {space :::p, comp label2:::p:27:p, space :::p, comp panel23:::p::p, space :::p, comp scrollPane1::::379:x}}"
+							} ) {
+								name: "panel7"
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq {space :::p, par l {comp label3::l:p:50:p, comp label4::l:p:65:p}, space :::p, par l {comp textField2:::p:112:p, comp textField1:::p:112:p}, space :p:15:p, par l:::p {seq {comp label6:::p:71:p, space :::x, comp textField4:::p:121:p}, seq {space :p:14:p, comp label5:::p:71:p, space :::p, comp textField3:::p:121:p}}, space :p:58:p, par l {comp label7:::p:69:p, comp label8:::p:69:p}, space :p:29:p, par l {comp textField5:::p:121:p, comp textField6:::p:121:p}, space :p:49:p, par l {comp button1:::p::p, comp button2:::p::p}, space :p:39:p}}"
+									"$verticalGroup": "par l {seq l {space :::p, par b {comp label3::b:p:27:p, comp textField1::b:p::p, comp label5::b:p:30:p, comp button1::b:p::p, comp label7::b:p:30:p, comp textField5::b:p::p, comp textField3::b:p::p}, space :::p, par l {par b {comp label4::b:::x, comp label6::b:p::p, comp button2::b:p::p, comp textField2::b:p::p, comp textField4::b:p::p}, par b:l {comp label8::b:p:30:p, comp textField6::b:p::p}}, space :::p}}"
+								} ) {
+									name: "panel23"
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label3"
+										"text": "用户ID："
+										"font": #SwingDerivedFont1
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label4"
+										"text": "商品名称："
+										"font": #SwingDerivedFont2
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField1"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField2"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label5"
+										"text": "厂家："
+										"font": #SwingDerivedFont3
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label6"
+										"text": "入库日期："
+										"font": #SwingDerivedFont4
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField3"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField4"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label7"
+										"text": "入库单号："
+										"font": #SwingDerivedFont5
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label8"
+										"text": "送货员工："
+										"font": #SwingDerivedFont6
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField5"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField6"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button1"
+										"text": "查询"
+										"font": #SwingDerivedFont7
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button2"
+										"text": "重置"
+										"font": #SwingDerivedFont8
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
+									} )
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label2"
+									"text": "请在以下查询框内输入您要查询的信息："
+									"font": #SwingDerivedFont9
+								} )
+								add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+									name: "scrollPane1"
+									add( new FormComponent( "javax.swing.JTable" ) {
+										name: "table1"
+										"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( "" )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+										}, new java.util.Vector {
+											add( "入库单号" )
+											add( "仓库号" )
+											add( "商品名称" )
+											add( "用户" )
+											add( "厂家" )
+											add( "日期" )
+											add( "数量" )
+											add( "送货员工" )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+										} )
+									} )
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "查询入库表"
+							} )
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {seq t {space :::p, par l {seq l {par t {comp label28:::p:71:p, seq {comp label25:::p:71:p, space :p:4:p}}, par l:::p {seq l {space :p:17:p, comp button7:::p:157:p, space :p:133:p, comp button8:::p:157:p}, seq t {space :::x, par l {comp textField26:::p:99:p, comp textField23:::p:99:p}, space :p:363:p}}}, seq l {comp label23:::p:71:p, space u:::p, comp textField19:::p:99:p, space :p:24:p, par l {seq {par l {seq l {comp label31:::p:71:p, space :::p, comp textField20:::p:99:p}, seq l {comp label26:::p:71:p, space :::p, comp textField24:::p:99:p}}, space :p:37:p, par l {seq {comp label24:::p:71:p, space :::p, comp textField21:::p:99:p}, seq {comp label27:::p:71:p, space :::p, comp textField25:::p:99:p}}}, seq {comp label29:::p:71:p, space :::p, comp textField27:::p:99:p}}}}, space ::144:x}}"
+								"$verticalGroup": "par l {seq l {space :::p, par b {comp label23::b:p:31:p, comp label31::b:p:31:p, comp textField20::b:p::p, comp label24::b:p:31:p, comp textField21::b:p::p, comp textField19::b:p::p}, par l {seq {space :p:7:p, par b {comp label26::b:p:31:p, comp label25::b:p:31:p, comp textField23::b:p::p}}, seq l {space :::p, par b {comp textField24::b:p::p, comp label27::b:p:31:p, comp textField25::b:p::p}}}, space :p:6:p, par b {comp label28::b:p:31:p, comp label29::b:p:31:p, comp textField27::b:p::p, comp textField26::b:p:20:p}, space :p:49:p, par b {comp button8::b:p:53:p, comp button7::b:p:53:p}, space ::296:x}}"
+							} ) {
+								name: "panel8"
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label23"
+									"text": "入库单号："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label24"
+									"text": "用户："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label25"
+									"text": "商品名称："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label26"
+									"text": "厂家："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label27"
+									"text": "数量："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label28"
+									"text": "日期："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label29"
+									"text": "送货员工："
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label31"
+									"text": "仓库号："
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button7"
+									"text": "确认"
+									"font": #SwingDerivedFont0
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button7", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button8"
+									"text": "重置"
+									"font": #SwingDerivedFont0
+									addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button8", true ) )
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField19"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField20"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField21"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField23"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField24"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField25"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField26"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField27"
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "填写入库表"
+							} )
+						} )
+					}, new FormLayoutConstraints( null ) {
+						"title": "入库管理"
+						"icon": new com.jformdesigner.model.SwingIcon( 2, "FileChooser.listViewIcon" )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+						name: "panel6"
+						add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+							name: "tabbedPane4"
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {seq l {space :::p, comp label22:::p:356:p, space ::377:x}, comp panel26::t:::x, comp scrollPane3::l:::x}"
+								"$verticalGroup": "par l {seq l {space :::p, comp label22:::p:27:p, space :::p, comp panel26:::p::p, space :::p, comp scrollPane3::::379:x}}"
+							} ) {
+								name: "panel11"
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq {space :::p, par l {comp label16:::p:50:p, comp label17:::p:65:p}, space u:::p, par l {comp textField13:::p:112:p, comp textField14::l:p:112:p}, space s:::p, par l:::p {comp label18::::71:x, comp label19::::71:x}, space :::p, par l:::p {comp textField16::::121:x, comp textField15::::121:x}, space :p:29:p, par t {comp label20:::p:69:p, comp label21:::p:69:p}, space s:::p, par l {comp textField17::l:p:121:p, comp textField18::l:p:121:p}, space :p:26:p, par l {comp button6:::p::p, comp button5:::p::p}, space :::x}}"
+									"$verticalGroup": "par l {seq l {space :::p, par b {comp label16::b:p:27:p, comp textField15::b:p::p, comp label20::b:p:30:p, comp textField17::b:p::p, comp button5::b:p::p, comp label18::b:p:30:p, comp textField13::b:p::p}, space :::p, par b {comp textField16::b:p::p, comp label17::b:::x, comp label21::b:p:30:p, comp textField18::b:p::p, comp button6::b:p::p, comp label19::b:p::p, comp textField14::b:p::p}, space :::p}}"
+								} ) {
+									name: "panel26"
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label16"
+										"text": "用户ID："
+										"font": #SwingDerivedFont1
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label17"
+										"text": "商品名称："
+										"font": #SwingDerivedFont2
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField13"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField14"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label18"
+										"text": "借出日期："
+										"font": #SwingDerivedFont3
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label19"
+										"text": "归还日期："
+										"font": #SwingDerivedFont4
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField15"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField16"
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label20"
+										"text": "借记单号："
+										"font": #SwingDerivedFont5
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label21"
+										"text": "借出人："
+										"font": #SwingDerivedFont6
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField17"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField18"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button5"
+										"text": "查询"
+										"font": #SwingDerivedFont7
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button5", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button6"
+										"text": "重置"
+										"font": #SwingDerivedFont8
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button6", true ) )
+									} )
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label22"
+									"text": "请在以下查询框内输入您要查询的信息："
+									"font": #SwingDerivedFont9
+								} )
+								add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+									name: "scrollPane3"
+									add( new FormComponent( "javax.swing.JTable" ) {
+										name: "table3"
+										"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( "" )
+												add( "" )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( "" )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+											add( new java.util.Vector {
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+												add( null )
+											} )
+										}, new java.util.Vector {
+											add( "借记单号" )
+											add( "仓库号" )
+											add( "商品号" )
+											add( "用户" )
+											add( "商品名称" )
+											add( "数量" )
+											add( "厂家" )
+											add( "借出日期" )
+											add( "归还日期" )
+											add( "借记人" )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										}, new java.util.Vector {
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+											add( null )
+											add( new com.jformdesigner.model.SwingTableColumn( null, 30, 0, 0, true ) )
+											add( null )
+											add( null )
+											add( null )
+											add( null )
+										} )
+									} )
+								} )
+							}, new FormLayoutConstraints( null ) {
+								"title": "查询借记表"
+							} )
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {space :0:743:x}"
+								"$verticalGroup": "par l {space :0:514:x}"
+							} ) {
+								name: "panel9"
+							}, new FormLayoutConstraints( null ) {
+								"title": "填写借记表单"
+							} )
+						} )
+					}, new FormLayoutConstraints( null ) {
+						"title": "借出管理"
+						"icon": new com.jformdesigner.model.SwingIcon( 2, "FileChooser.listViewIcon" )
+					} )
+				} )
+			} )
+			menuBar: new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+				name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+					name: "menu1"
+					"text": "编辑"
+					add( new FormComponent( "javax.swing.JMenuItem" ) {
+						name: "menuItem1"
+						"text": "退出"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem1", true ) )
+					} )
+				} )
+			}
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 35, 0 )
+			"size": new java.awt.Dimension( 755, 630 )
+		} )
+	}
+}

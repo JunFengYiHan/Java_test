@@ -1,0 +1,46 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.11" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:38:p, par t {seq {par l {comp 用户名:::::x, seq {space :0:0:x, comp 密码:::p:48:p}}, space s:::p, par l {comp username:::p:132:p, comp password:::::x}}, seq {comp 登录:::p::p, space :::x, comp 重置:::p::p}}, space ::52:x}}"
+			"$verticalGroup": "par l {seq t {space :p:25:p, par b {comp 用户名::b:p:30:p, comp username::b:p::p}, space u:::p, par b {comp 密码::b:p:30:p, comp password::b:p::p}, space s:::p, par b {comp 登录::b:p::p, comp 重置::b:p::p}, space ::20:x}}"
+		} ) {
+			name: "login"
+			"title": "登录"
+			"visible": true
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "登录"
+				"text": "登录"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "登录", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "重置"
+				"text": "重置"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "重置", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "username"
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "password"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "用户名"
+				"text": "用户名："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 2, false )
+				"horizontalAlignment": 2
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "密码"
+				"text": "密码："
+				"font": new com.jformdesigner.model.SwingDerivedFont( null, 0, 2, false )
+				"horizontalAlignment": 2
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 290, 200 )
+		} )
+	}
+}
