@@ -18,6 +18,7 @@ public class Main {
     }
     //任意进制转换
     public static String transition(int val,int n) {
+        if(val==0) return "0";
         StringBuilder sb = new StringBuilder();
         boolean flag = val<0;//val可能是负数
         val = val<0?-val:val;//转换成正数
