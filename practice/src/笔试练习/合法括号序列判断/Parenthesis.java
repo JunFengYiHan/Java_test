@@ -14,16 +14,36 @@ public class Parenthesis {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < n; i++) {
             char tmp = A.charAt(i);
-            if (tmp=='(') {
-                stack.push(tmp);
-            }else if (tmp==')') {
-                if (stack.empty()||stack.pop()!='(') {
-                    return false;
+            if(tmp=='('||tmp==')') {
+                if(tmp=='(') {
+                    stack.push(tmp);
+                }else{
+                    if(!stack.empty()&&stack.peek()=='(') {
+                        stack.pop();
+                    }else{
+                        return false;
+                    }
                 }
-            }else {
+            }else{
                 return false;
             }
         }
         return stack.empty();
     }
+//    public boolean chkParenthesis(String A, int n) {
+//        Stack<Character> stack = new Stack<>();
+//        for (int i = 0; i < n; i++) {
+//            char tmp = A.charAt(i);
+//            if (tmp=='(') {
+//                stack.push(tmp);
+//            }else if (tmp==')') {
+//                if (stack.empty()||stack.pop()!='(') {
+//                    return false;
+//                }
+//            }else {
+//                return false;
+//            }
+//        }
+//        return stack.empty();
+//    }
 }
