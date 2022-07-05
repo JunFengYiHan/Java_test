@@ -9,11 +9,22 @@ package web.Thread;
  */
 public class TestThreadDemo4 {
     private static int count = 0;
+    private static Object locker = new Object();
 //    synchronized public static void func(){
 //        count++;
 //    }
-    public static void func() {
-        count++;
+
+    //    public static void func() {
+//        synchronized(locker) {
+//            count++;
+//        }
+//
+//    }
+    public static void func() {//类对象,描述当前类,唯一
+        synchronized (TestThreadDemo4.class) {
+            count++;
+        }
+
     }
 
     public static void main(String[] args) {
