@@ -14,10 +14,25 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        int ret = a>b?a:b;
-        while(ret%b!=0||ret%a!=0) {
-            ret++;
+        int c = a;
+        if(a<b) {
+            a = b;
+            b = c;
+            c = a;
         }
-        System.out.println(ret);
+        while(a%b!=0) {
+            a+=c;
+        }
+        System.out.println(a);
     }
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int a = sc.nextInt();
+//        int b = sc.nextInt();
+//        int ret = a>b?a:b;
+//        while(ret%b!=0||ret%a!=0) {
+//            ret++;
+//        }
+//        System.out.println(ret);
+//    }
 }

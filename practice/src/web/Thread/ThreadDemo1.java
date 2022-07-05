@@ -19,7 +19,7 @@ public class ThreadDemo1 {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                        // break;
+                        break;
                     }
                 }
                 //System.out.println("run: " + Thread.interrupted());
@@ -32,7 +32,7 @@ public class ThreadDemo1 {
 //            e.printStackTrace();
 //        }
         Thread.currentThread().interrupt();
-
+        //只是修改标志位,并没有实际中断线程
         System.out.println(Thread.interrupted());
 
         System.out.println(thread.isInterrupted());

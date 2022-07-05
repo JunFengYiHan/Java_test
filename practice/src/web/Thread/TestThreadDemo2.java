@@ -17,7 +17,7 @@ public class TestThreadDemo2 {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        //e.printStackTrace();
                         break;
                     }
                 }
@@ -27,9 +27,11 @@ public class TestThreadDemo2 {
         thread.start();
 
         try {
+
+            //thread.interrupt();//通知线程结束,1.修改标志位 2.线程处于阻塞等待时,通过异常唤醒,此时不修改标志位
             System.out.println("join开始执行");
             thread.join();
-            //thread.interrupt();
+
             System.out.println("join执行结束");
         } catch (InterruptedException e) {
             e.printStackTrace();

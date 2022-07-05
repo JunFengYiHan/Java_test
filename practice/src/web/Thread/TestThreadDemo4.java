@@ -8,13 +8,16 @@ package web.Thread;
  * Time: 23:06
  */
 public class TestThreadDemo4 {
-    private static  int count = 0;
-
-    synchronized public static void func(){
+    private static int count = 0;
+//    synchronized public static void func(){
+//        count++;
+//    }
+    public static void func() {
         count++;
     }
+
     public static void main(String[] args) {
-        Thread t1 = new Thread(){
+        Thread t1 = new Thread() {
             @Override
             public void run() {
                 for (int i = 0; i < 10000; i++) {
@@ -24,7 +27,7 @@ public class TestThreadDemo4 {
         };
         t1.start();
 
-        Thread t2 = new Thread(){
+        Thread t2 = new Thread() {
             @Override
             public void run() {
                 for (int i = 0; i < 10000; i++) {
