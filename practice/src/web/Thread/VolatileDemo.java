@@ -9,7 +9,7 @@ import java.util.Scanner;
  * Date: 2022/7/5
  * Time: 19:57
  */
-public class volatileDemo {
+public class VolatileDemo {
     static  int flag = 0;
     //static volatile int flag = 0;//确保每次访问flag都访问内存,拿到最新值,而不是读取寄存器保存的flag值
 
