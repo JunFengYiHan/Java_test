@@ -15,6 +15,7 @@ public class Main {
     static boolean sy = false;
     static boolean up = false;
     static boolean lo = false;
+    static String[] arr = {"VERY_WEAK","WEAK","WEAK","WEAK","WEAK","AVERAGE","STRONG","VERY_STRONG","SECURE","VERY_SECURE"};
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()) {
@@ -41,22 +42,25 @@ public class Main {
         up=false;
         sy=false;
         score+=tmp;
+        if(score<25) score = 0;
         //System.out.println(score);
-        if (score>=90) {
-            return "VERY_SECURE";
-        }else if (score>=80) {
-            return "SECURE";
-        }else if (score>=70) {
-            return "VERY_STRONG";
-        }else if (score>=60) {
-            return "STRONG";
-        }else if(score>=50) {
-            return "AVERAGE";
-        }else if (score>=25) {
-            return "WEAK";
-        }else {
-            return "VERY_WEAK";
-        }
+
+//        if (score>=90) {
+//            return "VERY_SECURE";
+//        }else if (score>=80) {
+//            return "SECURE";
+//        }else if (score>=70) {
+//            return "VERY_STRONG";
+//        }else if (score>=60) {
+//            return "STRONG";
+//        }else if(score>=50) {
+//            return "AVERAGE";
+//        }else if (score>=25) {
+//            return "WEAK";
+//        }else {
+//            return "VERY_WEAK";
+//        }
+        return arr[score/10];
     }
     //长度得分
     public static int lengthGrade(String s) {

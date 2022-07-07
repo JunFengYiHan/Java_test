@@ -3,8 +3,7 @@ package web.Thread;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -48,6 +47,13 @@ public class ThreadDemo5 {
     }
 
     public static void main(String[] args) throws InterruptedException {
+//        ExecutorService service =  Executors.newFixedThreadPool(10);
+//        service.submit(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("hello");
+//            }
+//        });
         ThreadPool threadPool = new ThreadPool();
         for (int i = 0; i < 100; i++) {
             int n = i;

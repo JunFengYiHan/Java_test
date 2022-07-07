@@ -16,11 +16,11 @@ public class ThreadDemo4 {
 
         public Task(Runnable command, long time) {
             this.command = command;
-            this.time = System.currentTimeMillis() + time;
+            this.time = System.currentTimeMillis() + time;//使用绝对之间描述执行时间
         }
 
         public void run() {
-            command.run();
+            command.run();//执行任务逻辑
         }
 
         @Override
@@ -43,6 +43,7 @@ public class ThreadDemo4 {
         }
 
         public Timer() {
+            //扫描线程
             Thread t = new Thread() {
                 @Override
                 public void run() {
@@ -73,7 +74,7 @@ public class ThreadDemo4 {
 
     public static void main(String[] args) {
         System.out.println("程序开始");
-        Timer timer = new Timer();
+        Timer timer = new Timer();//定时器
         timer.schedule(new Runnable() {
             @Override
             public void run() {
