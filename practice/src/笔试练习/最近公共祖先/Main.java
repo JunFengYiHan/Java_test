@@ -29,5 +29,8 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println(new LCA().getLCA(2, 3));
+        byte b = 127;
+        ++b;
+        System.out.println(b);
     }
 }
