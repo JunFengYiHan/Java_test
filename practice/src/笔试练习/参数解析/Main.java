@@ -31,7 +31,7 @@ public class Main {
                 sb.append("\n");
             }
         }
-        System.out.println(count+1);
+        System.out.println(count+1);//最后一个字符串没有记录上
         System.out.println(sb.toString());
     }
 }
