@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static int findMinJumpCount(int n, int m) {
-
+        return -1;
     }
     //计算约数
     private static ArrayList<Integer> arr = new ArrayList<>();
