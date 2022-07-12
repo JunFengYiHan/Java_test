@@ -16,10 +16,10 @@ public class Solution {
         for (int i = 0; i < indices.length; i++) {
             int row = indices[i][0];
             int col = indices[i][1];
-            for (int j = 0; j < m; j++) {
+            for (int j = 0; j < n; j++) {
                 arr[row][j] += 1;
             }
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 arr[j][col] += 1;
             }
         }
@@ -34,7 +34,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {{0, 0}, {0, 0}};
-        System.out.println(new Solution().oddCells(1, 1, arr));
+        int[][] arr = {{0, 1}, {1, 1}};
+        System.out.println(new Solution().oddCells(2, 3, arr));
     }
 }
