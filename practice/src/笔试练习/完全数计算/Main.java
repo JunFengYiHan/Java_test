@@ -12,17 +12,18 @@ import java.util.Scanner;
 public class Main {
     //求完全数
     public static boolean isPerNum(int n) {
-        int sum = 0;
-        for (int i = 1; i <= n/2; i++) {
-            if (n%i==0) {
-                sum+=i;
+        int sum = 0;//除去本身,约数最大就是它的一半
+        for (int i = 1; i <= n / 2; i++) {
+            if (n % i == 0) {
+                sum += i;
             }
         }
-        return sum==n;
+        return sum == n;
     }
+
     //求不大于n的所有完全数
     public static int getPerSum(int n) {
-        int count = 0;
+        int count = 0;//可以从6开始
         for (int i = 1; i < n; i++) {
             if (isPerNum(i)) {
                 count++;
@@ -30,9 +31,10 @@ public class Main {
         }
         return count;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        while(sc.hasNext()) {
+        while (sc.hasNext()) {
             int n = sc.nextInt();
             System.out.println(getPerSum(n));
         }

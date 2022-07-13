@@ -16,7 +16,7 @@ public class ThreadDemo6 {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Callable<Integer> callable = new Callable<Integer>() {
-            @Override
+            @Override //泛型参数就是返回值类型
             public Integer call() throws Exception {
                 int sum = 0;
                 for (int i = 1; i <= 100; i++) {
@@ -25,6 +25,8 @@ public class ThreadDemo6 {
                 return sum;
             }
         };
+        //Thread不支持直接使用callable
+        //futureTask会保存了callable的返回值
         FutureTask<Integer> futureTask = new FutureTask<>(callable);
         Thread thread = new Thread(futureTask);
         thread.start();
