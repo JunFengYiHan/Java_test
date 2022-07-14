@@ -16,7 +16,5 @@ public class Main {
             int n = sc.nextInt();
         }
     }
-    public static int[] creat(int n) {
-        int[] arr =
-    }
+
 }
