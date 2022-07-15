@@ -16,14 +16,15 @@ public class Main {
         arr[0] = 1;
         arr[1] = 1;
         for (int i = 2; i < 31; i++) {
-            arr[i] = arr[i-1]+arr[i-2];
+            arr[i] = arr[i - 1] + arr[i - 2];
         }
         return arr;
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] arr = getBuffer();
-        while(sc.hasNext()) {
+        while (sc.hasNext()) {
             int index = sc.nextInt() - 1;//转换为下标
             System.out.println(arr[index]);
         }
