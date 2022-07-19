@@ -1,6 +1,6 @@
 package 笔试练习.洗牌;
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 /**
@@ -23,9 +23,11 @@ public class Main {
             for (int j = 0; j < 2 * n; j++) {
                 arr[j] = sc.nextInt();
             }
+            //洗牌k次
             for (int j = 0; j < k; j++) {
                 shuffle(arr, n);
             }
+            //
             for (int j = 0; j < 2 * n; j++) {
                 System.out.print(arr[j]);
                 if (j < 2 * n - 1) {
@@ -40,10 +42,12 @@ public class Main {
     public static void shuffle(int[] arr, int n) {
         int[] left = new int[n];
         int[] right = new int[n];
+        //分开成为两个牌堆
         for (int i = 0; i < n; i++) {
             left[i] = arr[i];
             right[i] = arr[i + n];
         }
+        //进行交叉插入完成洗牌
         int j = 0;
         for (int i = 0; i < 2 * n; i += 2) {
             arr[i] = left[j];

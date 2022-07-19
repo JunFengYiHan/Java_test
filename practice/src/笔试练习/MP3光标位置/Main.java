@@ -20,6 +20,7 @@ public class Main {
             int down = 4;
             for (int i = 0; i < str.length(); i++) {
                 cur = str.charAt(i) == 'U' ? cur - 1 : cur + 1;
+                //窗口之内移动
                 if (cur > down) {
                     up++;
                     down++;
@@ -28,17 +29,20 @@ public class Main {
                     up--;
                     down--;
                 }
+                //最后一首歌后面
                 if (cur > n) {
                     cur = 1;
                     up = 1;
                     down = 4;
                 }
+                //第一首歌前面
                 if (cur <= 0) {
                     cur = n;
                     up = n - 3;
                     down = n;
                 }
             }
+            //窗口大小小于4
             if (n <= 4) {
                 for (int i = 1; i <= n; i++) {
                     System.out.print(i);

@@ -16,18 +16,18 @@ public class FileDemo {
 
     public static void getAllFile(String basePath) {
         File file = new File(basePath);
-        if(file.isFile()) {
+        if (file.isFile()) {
             result.add(basePath);
             //return;
-        }else if(file.isDirectory()){
+        } else if (file.isDirectory()) {
 
             String[] files = file.list();
             //if(files==null) return;
 
-            for (String path:files) {
+            for (String path : files) {
                 getAllFile(basePath + File.separator + path);
             }
-        }else {
+        } else {
             //不是普通文件,也不是目录文件,而是socket,管道,设备块文件
         }
     }
