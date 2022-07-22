@@ -16,8 +16,8 @@ public class Main {
         String str2 = scanner.nextLine();
         int count = Math.abs(str1.length()-str2.length());//长度差
 
-        for (int i = 0; i < ; i++) {
-
-        }
+//        for (int i = 0; i < ; i++) {
+//
+//        }
     }
 }
