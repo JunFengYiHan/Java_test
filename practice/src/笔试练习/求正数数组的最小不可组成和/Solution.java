@@ -26,8 +26,8 @@ public class Solution {
                 min = arr[i];
             }
         }
-        //枚举所有子集
-        for (int i = 1; i < Math.pow(2, arr.length); i++) {
+        //枚举所有子集     Math.pow(2, arr.length)
+        for (int i = 1; i < (1 << arr.length); i++) {
             int sum = 0;
             int j = 0;
             //计算每个子集的和

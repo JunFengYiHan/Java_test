@@ -14,11 +14,20 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
-            int count = 1;//最少一次
+
             if (n == 0) break;
+
+            if (n == 1) {
+                System.out.println(0);
+                continue;
+            }
+            int count = 1;//最少一次
             while (n > 3) {
                 count++;
-                n /= 2;
+                if (n % 3 == 1) {
+                    n += 2;
+                }
+                n /= 3;
             }
             System.out.println(count);
         }
