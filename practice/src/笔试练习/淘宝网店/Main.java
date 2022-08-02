@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Time: 23:14
  */
 public class Main {
-    static int[][] arr = {{31,28,31,}};
+    static int[][] arr = {{31,28,31,30,31,30,31,31,30,31,30,31}};
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int year1 = scanner.nextInt();
@@ -19,6 +19,6 @@ public class Main {
         int year2 = scanner.nextInt();
         int month2 = scanner.nextInt();
         int day2 = scanner.nextInt();
-
+        int flag = year1;
     }
 }
