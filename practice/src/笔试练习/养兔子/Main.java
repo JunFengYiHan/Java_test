@@ -15,28 +15,40 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            int n = scanner.nextInt();
-            System.out.println(getRabbitNum(n));
+        String str = scanner.nextLine();
+        String[] strs = str.split("<br/>");
+        for (int i = 0; i < strs.length; i++) {
+            int n = Integer.parseInt(strs[i]);
+            System.out.print(getRabbitNum(n));
+            if (i < strs.length - 1) {
+                System.out.print("<br/>");
+            }
         }
     }
+//    public static void main(String[] args) {
+//        Scanner scanner = new Scanner(System.in);
+//        String str = scanner.nextLine();
+//        while (scanner.hasNext()) {
+//            int n = scanner.nextInt();
+//            System.out.println(getRabbitNum(n));
+//        }
+//    }
 
     static List<BigDecimal> list = new ArrayList<>();
-    static BigDecimal f1 = new BigDecimal("1");
-    static BigDecimal f2 = new BigDecimal("1");
+    static BigDecimal f = new BigDecimal("1");
+    static BigDecimal sum = new BigDecimal("0");
+
     static {
-        list.add(f1);
-        list.add(f2);
+        list.add(f);
     }
+
     public static BigDecimal getRabbitNum(int n) {
 //        if (n < list.size()) {
 //            return list.get(n);
 //        }
         while (n > list.size()) {
-            BigDecimal f3 = f1.add(f2);
-            f1 = f2;
-            f2 = f3;
-            list.add(f3);
+            f = f.multiply(new BigDecimal("2"));
+            list.add(f);
         }
         return list.get(n - 1);
     }
