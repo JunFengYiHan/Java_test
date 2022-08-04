@@ -23,7 +23,7 @@ public class Main {
         double sum = 1.0;
         //求每个人都没获奖
         for (int i = 0; i < n - 1; i++) {
-            sum *= (n - 1.0 - i) / (n - i);
+            sum *= (1.0 - 1.0 /( n - i));
         }
         return sum;
     }
