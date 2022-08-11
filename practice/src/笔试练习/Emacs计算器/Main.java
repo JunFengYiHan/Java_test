@@ -18,7 +18,7 @@ public class Main {
             int n = scanner.nextInt();
             scanner.nextLine();
             String str = scanner.nextLine();
-            str = str.replace(" ","");
+            //str = str.replace(" ", "");
             int ret = emacs(str.toCharArray());
             System.out.println(ret);
         }
@@ -27,9 +27,39 @@ public class Main {
     //暂时不考虑表达式有误情况
     private static int emacs(char[] arr) {
         Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < ; i++) {
-            
+        int tmp = 0;
+        boolean flag = false;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= '0' && arr[i] <= '9') {
+                tmp = tmp * 10 + arr[i] - '0';
+                flag = true;
+                continue;
+            }
+            if (flag) {
+                stack.push(tmp);
+                tmp = 0;
+                flag = false;
+            }
+            if (arr[i] != ' ') {
+                int n = stack.pop();
+                int m = stack.pop();
+                switch (arr[i]) {
+                    case '+':
+                        stack.push(m + n);
+                        break;
+                    case '-':
+                        stack.push(m - n);
+                        break;
+                    case '*':
+                        stack.push(m * n);
+                        break;
+                    case '/':
+                        if (n == 0) return 0;
+                        stack.push(m / n);
+                        break;
+                }
+            }
         }
+        return stack.pop();
     }
-
 }
