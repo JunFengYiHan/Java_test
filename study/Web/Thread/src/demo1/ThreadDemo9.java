@@ -13,7 +13,7 @@ public class ThreadDemo9 {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                //currentThread()静态方法获取当前线程实例
+                //Thread.currentThread()静态方法获取当前线程实例
                 System.out.println(Thread.currentThread().getName());
                 try {
                     Thread.sleep(500);
