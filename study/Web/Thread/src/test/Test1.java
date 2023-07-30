@@ -1,4 +1,4 @@
-package demo2;
+package test;
 
 import java.util.concurrent.PriorityBlockingQueue;
 
@@ -7,21 +7,19 @@ import java.util.concurrent.PriorityBlockingQueue;
  * Description:
  * User: 柒
  * Date: 2023/7/30
- * Time: 22:37
+ * Time: 23:36
  */
 
-public class ThreadDemo12 {
-    //描述任务
+public class Test1 {
     static class Task implements Comparable<Task> {
-        //描述要执行的任务
+        //需要执行的任务
         private Runnable command;
-        //表示任务什么时候执行
-        //使用 ms 级时间戳
+        //任务执行的时间,毫秒级时间戳
         private long time;
 
-        public Task(Runnable command, long time) {
+        public Task(Runnable command, long delay) {
             this.command = command;
-            this.time = time + System.currentTimeMillis();
+            this.time = delay + System.currentTimeMillis();
         }
 
         //执行任务
@@ -35,69 +33,70 @@ public class ThreadDemo12 {
         }
     }
 
-    static class MyTimer {
-        //使用带有优先级的阻塞队列组织这些任务
+    static class Timer {
+        //任务优先阻塞队列
         private PriorityBlockingQueue<Task> queue = new PriorityBlockingQueue<>();
+        //锁对象,防止过度空转
         private Object locker = new Object();
 
         public void schedule(Runnable command, long delay) {
+            //创建任务,并加入定时器队列
             Task task = new Task(command, delay);
             queue.put(task);
-            //每次加入新的任务都需要重新唤醒扫描线程,重新判断是否需要等待
+            //当有新的任务时唤醒扫描线程,重新计算
             synchronized (locker) {
                 locker.notify();
             }
         }
 
-        public MyTimer() {
+        //扫描线程
+        public Timer() {
             Thread t = new Thread() {
                 @Override
                 public void run() {
                     while (true) {
                         try {
                             Task task = queue.take();
-                            long curTimer = System.currentTimeMillis();
-                            //当前时间小于任务执行时间,则继续等待,将任务重新放回队列
-                            if (curTimer < task.time) {
+                            //当前时间小于任务时间继续等待,否则执行任务
+                            if (System.currentTimeMillis() < task.time) {
                                 queue.put(task);
-                                //等待当前最先开始任务时间与当前时间的时间差
                                 synchronized (locker) {
-                                    locker.wait(task.time - curTimer);
+                                    locker.wait(task.time - System.currentTimeMillis());
                                 }
                             } else {
                                 task.run();
                             }
                         } catch (InterruptedException e) {
                             e.printStackTrace();
-                            break;
+                            break;//当出现中断信号时结束线程
                         }
                     }
                 }
             };
-
+            //启动扫描线程
             t.start();
         }
     }
 
     public static void main(String[] args) {
         System.out.println("代码开始执行");
-        MyTimer timer = new MyTimer();
+        Timer timer = new Timer();
         timer.schedule(new Runnable() {
             @Override
             public void run() {
-                System.out.println("hello");
+                System.out.println("hell1");
             }
         }, 3000);
         timer.schedule(new Runnable() {
             @Override
             public void run() {
-                System.out.println("hello1");
+                System.out.println("hell2");
             }
-        }, 1500);
+        }, 2000);
         timer.schedule(new Runnable() {
             @Override
             public void run() {
-                System.out.println("hello2");
+                System.out.println("hell3");
             }
         }, 500);
 
