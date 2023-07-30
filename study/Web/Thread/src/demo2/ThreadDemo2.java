@@ -1,36 +1,50 @@
 package demo2;
 
+import java.util.Vector;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
  * User: 柒
- * Date: 2023/7/29
- * Time: 21:28
+ * Date: 2023/7/30
+ * Time: 16:25
  */
 
-public class ThreadDemo1 {
+public class ThreadDemo2 {
     static class Counter {
         private static int count = 0;
-
-        public static void increase() {
+        //锁
+        synchronized public void increase() {
             count++;
         }
+        //可重入
+        synchronized public void increase2(){
+            increase();
+        }
+//        public void increase() {
+//            synchronized (this) {
+//                count++;
+//            }
+//        }
+
     }
 
     public static void main(String[] args) {
+        Counter counter = new Counter();
         Thread t1 = new Thread() {
             @Override
             public void run() {
                 for (int i = 0; i < 50000; i++) {
-                    Counter.increase();
+                    counter.increase();
                 }
             }
         };
+
         Thread t2 = new Thread() {
             @Override
             public void run() {
                 for (int i = 0; i < 50000; i++) {
-                    Counter.increase();
+                    counter.increase();
                 }
             }
         };
@@ -44,7 +58,7 @@ public class ThreadDemo1 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //线程不安全,导致结果不确定
         System.out.println(Counter.count);
+
     }
 }
