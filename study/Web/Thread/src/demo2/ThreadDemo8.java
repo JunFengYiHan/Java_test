@@ -15,7 +15,7 @@ public class ThreadDemo8 {
     private static int flag = 0;
 
     public static void main(String[] args) throws InterruptedException {
-
+        //三个线程按照ABC顺序打印多次
         Thread t1 = new Thread() {
             @Override
             public void run() {
