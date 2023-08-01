@@ -13,6 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadDemo1 {
     public static void main(String[] args) {
         AtomicInteger num = new AtomicInteger(10);
-        num
+        num.getAndAdd(10);
+        System.out.println(num);
     }
 }
