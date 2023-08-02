@@ -12,6 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ThreadDemo1 {
     public static void main(String[] args) {
+        //CAS的实现类
         AtomicInteger num = new AtomicInteger(10);
         num.getAndAdd(10);
         System.out.println(num);
