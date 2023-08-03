@@ -14,7 +14,7 @@ import java.io.IOException;
 public class FileDemo1 {
     public static void main(String[] args) throws IOException, InterruptedException {
         //./ 表示当前目录,idea的基准目录就是当前项目所在路径
-        File file = new File("./test.txt");
+        File file = new File("./text.txt");
         //创建文件
         System.out.println(file.createNewFile());
         //父级目录

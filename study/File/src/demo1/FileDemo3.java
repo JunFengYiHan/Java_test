@@ -19,12 +19,17 @@ public class FileDemo3 {
         File file = new File(basePath);
         //先罗列第一个文件夹,再往下
         if (file.isFile()) {
+            //直接列出普通文件
             result.add(basePath);
         } else if (file.isDirectory()) {
+            //获取所有的文件名
             String[] list = file.list();
             for (int i = 0; i < list.length; i++) {
+                //从目录文件层层往下递归
                 getAllFile(basePath + File.separator + list[i]);
             }
+            //将目录文件加入其中
+            result.add(basePath);
         } else {
             //既不是目录文件,也不是普通文件
             //如 socket文件,管道文件,设备块文件等
