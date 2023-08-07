@@ -46,8 +46,6 @@ public class FileDemo2 {
 
             //进行读写,按字节
             while (true) {
-                String aa = String.valueOf(inputStream);
-                System.out.println(inputStream);
                 byte[] b = new byte[1024];
                 int len = inputStream.read(b);
                 //读取完毕,退出
