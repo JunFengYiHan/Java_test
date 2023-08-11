@@ -54,6 +54,7 @@ public class UDPEchoClient {
     }
 
     public static void main(String[] args) throws IOException {
+        //指定服务器的ip和port
         UDPEchoClient client = new UDPEchoClient("127.0.0.1", 9090);
         client.start();
     }
