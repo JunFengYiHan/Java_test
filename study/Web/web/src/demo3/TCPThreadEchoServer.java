@@ -12,77 +12,72 @@ import java.util.Scanner;
  * Created with IntelliJ IDEA.
  * Description:
  * User: 柒
- * Date: 2023/8/11
- * Time: 22:22
+ * Date: 2023/8/12
+ * Time: 23:10
  */
 
-public class TCPEchoServer {
+public class TCPThreadEchoServer {
     private ServerSocket listenSocket = null;
 
-    public TCPEchoServer(int port) throws IOException {
+    public TCPThreadEchoServer(int port) throws IOException {
         listenSocket = new ServerSocket(port);
     }
 
     public void start() throws IOException {
         System.out.println("服务器启动");
         while (true) {
-            //先判断是否建立连接,而UDP会直接阻塞到receive
             Socket clientSocket = listenSocket.accept();
-            //已建立连接
-            processConnection(clientSocket);
-
+            //最好使用线程池组织
+            new Thread() {
+                @Override
+                public void run() {
+                    processConnection(clientSocket);
+                }
+            }.start();
         }
     }
 
-    private void processConnection(Socket clientSocket) {
+    private void processConnection(Socket socket) {
         String log = String.format("[%s:%d] 客户端上线",
-                clientSocket.getInetAddress().toString(), clientSocket.getPort());
+                socket.getInetAddress().toString(), socket.getPort());
         System.out.println(log);
-
-        try (InputStream inputStream = clientSocket.getInputStream();
-             OutputStream outputStream = clientSocket.getOutputStream()) {
+        try (InputStream inputStream = socket.getInputStream();
+             OutputStream outputStream = socket.getOutputStream()) {
             Scanner scanner = new Scanner(inputStream);
             PrintWriter writer = new PrintWriter(outputStream);
-            while (true) {
-                if (!scanner.hasNext()) {
-                    log = String.format("[%s:%d] 客户端下线",
-                            clientSocket.getInetAddress().toString(), clientSocket.getPort());
-                    System.out.println(log);
-                    break;
-                }
-                //读取请求
+            while (scanner.hasNext()) {
+                //接收请求
                 String request = scanner.next();
                 //计算响应
                 String response = process(request);
                 //回发响应
                 writer.println(response);
-
-                //刷新缓冲区,强制发送
+                //强制刷新缓冲区,确保发送
                 writer.flush();
-
                 //打印日志
-                log = String.format("[%s:%d] req:%s ; resp:%s", clientSocket.getInetAddress().toString(),
-                        clientSocket.getPort(), request, response);
+                log = String.format("req:%s : resp:%s", request, response);
                 System.out.println(log);
             }
+            log = String.format("[%s:%d] 客户端下线",
+                    socket.getInetAddress().toString(), socket.getPort());
+            System.out.println(log);
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        }finally {
             try {
-                clientSocket.close();
+                socket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    //计算请求
     private String process(String request) {
         return request;
     }
 
     public static void main(String[] args) throws IOException {
-        TCPEchoServer server = new TCPEchoServer(9090);
+        TCPThreadEchoServer server = new TCPThreadEchoServer(9090);
         server.start();
     }
 }
