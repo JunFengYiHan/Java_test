@@ -32,14 +32,15 @@ public class TcpEchoClient {
              OutputStream outputStream = socket.getOutputStream()) {
             Scanner scanner = new Scanner(inputStream);
             PrintWriter writer = new PrintWriter(outputStream);
+            System.out.print("->: ");
             while (input.hasNext()) {
-                System.out.print("->: ");
                 String request = input.next();
                 writer.println(request);
                 writer.flush();
                 String response = scanner.next();
                 String log = String.format("req:%s  resp:%s", request, response);
                 System.out.println(log);
+                System.out.print("->: ");
             }
         } catch (IOException e) {
             e.printStackTrace();
