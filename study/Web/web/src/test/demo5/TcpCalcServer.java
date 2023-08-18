@@ -41,7 +41,8 @@ public class TcpCalcServer {
             Scanner scanner = new Scanner(inputStream);
             PrintWriter writer = new PrintWriter(outputStream);
             while (scanner.hasNext()) {
-                String request = scanner.next();
+                //对应客户端的请求格式,使用空格为分隔符读取一行
+                String request = scanner.nextLine();
                 String response = process(request);
                 writer.println(response);
                 writer.flush();
@@ -64,9 +65,7 @@ public class TcpCalcServer {
     }
 
     private String process(String request) {
-        //使用逆波兰算法实现
-        String temp = transition(request);
-        return evaluation(temp);
+        return evaluation(request);
     }
 
     private static String evaluation(String str) {
@@ -112,52 +111,6 @@ public class TcpCalcServer {
 
         }
         return stack.pop() + "";
-    }
-
-    private String transition(String request) {
-        char[] str = request.toCharArray();
-        Stack<Character> stack = new Stack<>();//操作符栈
-        StringBuilder sb = new StringBuilder();//最终后缀表达式
-        for (int i = 0; i < str.length; i++) {
-            char ch = str[i];
-            if (ch >= '0' && ch <= '9') {
-                sb.append(ch);
-            } else {
-                sb.append(' ');//区分每个数字
-                //栈为空直接入栈
-                if (stack.empty() || ch == '(') {
-                    stack.push(ch);
-                } else if (ch == ')') {
-                    //假设输入的表达式合法,将左右括号直接的操作符全部出栈
-                    while (!stack.empty() && stack.peek() != '(') {
-                        sb.append(stack.pop());
-//                        sb.append(' ');
-                    }
-                    stack.pop();//去掉栈顶左括号
-                } else {
-                    //ch为+或-直接出栈
-                    if (ch == '+' || ch == '-') {
-                        while (!stack.empty() && stack.peek() != '(') {
-                            sb.append(stack.pop());
-                        }
-                        stack.push(ch);
-                    } else {
-                        //栈顶为+ -直接入栈,* /出栈
-//                        if (stack.peek() != '+' && stack.peek() != '-' && stack.peek() != '(') {
-                        while (!stack.empty() && (stack.peek() == '*' || stack.peek() == '/')) {
-                            sb.append(stack.pop());
-                        }
-//                        }
-                        stack.push(ch);
-                    }
-                }
-            }
-        }
-        sb.append(' ');
-        while (!stack.empty()) {
-            sb.append(stack.pop());
-        }
-        return sb.toString();
     }
 
     public static void main(String[] args) throws IOException {
